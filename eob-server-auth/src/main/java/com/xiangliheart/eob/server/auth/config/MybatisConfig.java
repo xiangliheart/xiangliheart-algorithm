@@ -37,9 +37,9 @@ public class MybatisConfig {
     public SqlSessionFactory sqlSessionFactory() throws Exception {
         SqlSessionFactoryBean sessionFactory = new SqlSessionFactoryBean();
         sessionFactory.setDataSource(dataSource);
-        sessionFactory.setTypeAliasesPackage("com.xiangliheart.eob.server.auth.model");
+        sessionFactory.setTypeAliasesPackage("com.xiangliheart.eob.server.auth.entity");
         PathMatchingResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
-        sessionFactory.setMapperLocations(resolver.getResources("classpath*:**/mapper/*.xml"));
+        sessionFactory.setMapperLocations(resolver.getResources("classpath:**/mapper/*.xml"));
         return sessionFactory.getObject();
     }
 }
