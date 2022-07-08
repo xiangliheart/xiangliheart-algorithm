@@ -106,4 +106,9 @@
       customer_status = #{customerStatus,jdbcType=INTEGER}
     where customer_id = #{customerId,jdbcType=VARCHAR}
   </update>
+  <select id="selectPage"  resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from tb_am_customer
+  </select>
 </mapper>

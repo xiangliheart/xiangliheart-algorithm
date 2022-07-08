@@ -5,6 +5,10 @@
 package com.xiangliheart.eob.server.auth.service;
 
 import com.xiangliheart.eob.server.auth.entity.EobAmCustomer;
+import com.xiangliheart.eob.server.auth.utils.pagehelper.PageRequest;
+import com.xiangliheart.eob.server.auth.utils.pagehelper.PageResult;
+
+import java.util.List;
 
 /**
  * EobAmCustomerService
@@ -19,9 +23,13 @@ public interface EobAmCustomerService {
 
     int insertSelective(EobAmCustomer row);
 
-    EobAmCustomer selectByPrimaryKey(String customerId);
+    EobAmCustomer findByPrimaryKey(String customerId);
 
     int updateByPrimaryKeySelective(EobAmCustomer row);
 
     int updateByPrimaryKey(EobAmCustomer row);
+
+    List<EobAmCustomer> findAll();
+
+    PageResult findPage(PageRequest pageRequest);
 }

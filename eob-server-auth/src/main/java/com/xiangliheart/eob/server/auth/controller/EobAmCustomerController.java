@@ -6,13 +6,11 @@ package com.xiangliheart.eob.server.auth.controller;
 
 import com.xiangliheart.eob.server.auth.entity.EobAmCustomer;
 import com.xiangliheart.eob.server.auth.service.EobAmCustomerService;
+import com.xiangliheart.eob.server.auth.utils.pagehelper.PageRequest;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -22,38 +20,13 @@ import java.util.List;
  * @auther: xiangliheart(湘澧寸心)
  * @since: 2022/7/2
  */
-@Api(value = "EobAmCustomerController-客户管理")
+@Api(tags = "EobAmCustomerController-客户管理")
 @RestController
 @RequestMapping("/eobAmCustomer")
 public class EobAmCustomerController {
     @Autowired
     EobAmCustomerService eobAmCustomerService;
 
-    /**
-     * deleteSingle
-     *
-     * @auther: xiangliheart(湘澧寸心)
-     * @since: 2022/7/2
-     * @params: String customerId
-     */
-    @ApiOperation(value = "删除单个客户信息", notes = "删除单个客户信息")
-    @PostMapping(value = "/delete/single")
-    public Object deleteSingle(@RequestParam String customerId) {
-        return eobAmCustomerService.deleteByPrimaryKey(customerId);
-    }
-
-    /**
-     * deleteList
-     *
-     * @auther: xiangliheart(湘澧寸心)
-     * @since: 2022/7/2
-     * @params: List<String> customerIdList
-     */
-    @ApiOperation(value = "批量删除客户信息", notes = "批量删除客户信息")
-    @PostMapping(value = "/delete/list")
-    public Object deleteList(@RequestParam List<String> customerIdList) {
-        return null;
-    }
 
     /**
      * createtSingle
@@ -64,7 +37,7 @@ public class EobAmCustomerController {
      */
     @ApiOperation(value = "创建单条客户信息", notes = "创建单条客户信息")
     @PostMapping(value = "/create/single")
-    public Object createSingle(@RequestParam EobAmCustomer eobAmCustomer) {
+    public Object createSingle(@RequestBody EobAmCustomer eobAmCustomer) {
         return eobAmCustomerService.insert(eobAmCustomer);
     }
 
@@ -90,12 +63,13 @@ public class EobAmCustomerController {
      */
     @ApiOperation(value = "查询单条客户信息", notes = "查询单条客户信息")
     @PostMapping(value = "/query/single")
-    public Object querySingle(@RequestParam String customerId) {
-        return eobAmCustomerService.selectByPrimaryKey(customerId);
+    public EobAmCustomer querySingle(@RequestParam String customerId) {
+        EobAmCustomer eobAmCustomer = eobAmCustomerService.findByPrimaryKey(customerId);
+        return eobAmCustomer;
     }
 
     /**
-     * selectPage
+     * queryPage
      *
      * @auther: xiangliheart(湘澧寸心)
      * @since: 2022/7/2
@@ -103,8 +77,8 @@ public class EobAmCustomerController {
      */
     @ApiOperation(value = "分页查询客户信息", notes = "分页查询客户信息")
     @PostMapping(value = "/query/page")
-    public Object queryPage(@RequestParam EobAmCustomer eobAmCustomer) {
-        return null;
+    public Object queryPage(@RequestBody PageRequest pageRequest) {
+        return eobAmCustomerService.findPage(pageRequest);
     }
 
     /**
@@ -130,6 +104,32 @@ public class EobAmCustomerController {
     @ApiOperation(value = "批量修改客户信息", notes = "批量修改客户信息")
     @PostMapping(value = "/modify/list")
     public Object modifyList(@RequestParam List<EobAmCustomer> eobAmCustomerList) {
+        return null;
+    }
+
+    /**
+     * deleteSingle
+     *
+     * @auther: xiangliheart(湘澧寸心)
+     * @since: 2022/7/2
+     * @params: String customerId
+     */
+    @PostMapping(value = "/delete/single")
+    @ApiOperation(value = "删除单个客户信息", notes = "删除单个客户信息")
+    public Object deleteSingle(@RequestParam String customerId) {
+        return eobAmCustomerService.deleteByPrimaryKey(customerId);
+    }
+
+    /**
+     * deleteList
+     *
+     * @auther: xiangliheart(湘澧寸心)
+     * @since: 2022/7/2
+     * @params: List<String> customerIdList
+     */
+    @ApiOperation(value = "批量删除客户信息", notes = "批量删除客户信息")
+    @PostMapping(value = "/delete/list")
+    public Object deleteList(@RequestParam List<String> customerIdList) {
         return null;
     }
 }

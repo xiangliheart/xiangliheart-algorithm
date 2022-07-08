@@ -6,6 +6,8 @@ package com.xiangliheart.eob.server.auth.dao;
 
 import com.xiangliheart.eob.server.auth.entity.EobAmCustomer;
 
+import java.util.List;
+
 /**
  * EobAmCustomerMapper
  *
@@ -24,4 +26,8 @@ public interface EobAmCustomerMapper {
     int updateByPrimaryKeySelective(EobAmCustomer row);
 
     int updateByPrimaryKey(EobAmCustomer row);
+
+    List<EobAmCustomer> selectAll();
+
+    List<EobAmCustomer> selectPage();
 }
