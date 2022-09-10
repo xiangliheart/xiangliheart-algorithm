@@ -1,0 +1,16 @@
+server:
+  port: 80
+  tomcat:
+    uri-encoding: UTF-8
+    max-threads: 1000
+    min-spare-threads: 30
+spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+# pagehelper
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql

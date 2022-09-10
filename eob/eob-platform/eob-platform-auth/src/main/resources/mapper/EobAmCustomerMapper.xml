@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xiangliheart.eob.platform.auth.dao.EobAmCustomerMapper">
+    <resultMap id="BaseResultMap" type="com.xiangliheart.eob.platform.auth.entity.EobAmCustomer">
+        <constructor>
+            <idArg column="id" javaType="java.lang.String" jdbcType="VARCHAR"/>
+            <arg column="region_code" javaType="java.lang.String" jdbcType="VARCHAR"/>
+            <arg column="name" javaType="java.lang.String" jdbcType="VARCHAR"/>
+            <arg column="status" javaType="java.lang.Integer" jdbcType="INTEGER"/>
+            <arg column="create_by" javaType="java.lang.String" jdbcType="VARCHAR"/>
+            <arg column="create_time" javaType="java.util.Date" jdbcType="TIMESTAMP"/>
+            <arg column="last_update_by" javaType="java.lang.String" jdbcType="VARCHAR"/>
+            <arg column="last_update_time" javaType="java.util.Date" jdbcType="TIMESTAMP"/>
+        </constructor>
+    </resultMap>
+    <sql id="Base_Column_List">
+        id
+        , region_code, name, status, create_by, create_time, last_update_by, last_update_time
+    </sql>
+    <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from tb_am_customer
+        where id = #{id,jdbcType=VARCHAR}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+        delete
+        from tb_am_customer
+        where id = #{id,jdbcType=VARCHAR}
+    </delete>
+    <insert id="insert" parameterType="com.xiangliheart.eob.platform.auth.entity.EobAmCustomer">
+        insert into tb_am_customer (id, region_code, name,
+                                    status, create_by, create_time,
+                                    last_update_by, last_update_time)
+        values (#{id,jdbcType=VARCHAR}, #{regionCode,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR},
+                #{status,jdbcType=INTEGER}, #{createBy,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP},
+                #{lastUpdateBy,jdbcType=VARCHAR}, #{lastUpdateTime,jdbcType=TIMESTAMP})
+    </insert>
+    <insert id="insertSelective" parameterType="com.xiangliheart.eob.platform.auth.entity.EobAmCustomer">
+        insert into tb_am_customer
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="regionCode != null">
+                region_code,
+            </if>
+            <if test="name != null">
+                name,
+            </if>
+            <if test="status != null">
+                status,
+            </if>
+            <if test="createBy != null">
+                create_by,
+            </if>
+            <if test="createTime != null">
+                create_time,
+            </if>
+            <if test="lastUpdateBy != null">
+                last_update_by,
+            </if>
+            <if test="lastUpdateTime != null">
+                last_update_time,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=VARCHAR},
+            </if>
+            <if test="regionCode != null">
+                #{regionCode,jdbcType=VARCHAR},
+            </if>
+            <if test="name != null">
+                #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="status != null">
+                #{status,jdbcType=INTEGER},
+            </if>
+            <if test="createBy != null">
+                #{createBy,jdbcType=VARCHAR},
+            </if>
+            <if test="createTime != null">
+                #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="lastUpdateBy != null">
+                #{lastUpdateBy,jdbcType=VARCHAR},
+            </if>
+            <if test="lastUpdateTime != null">
+                #{lastUpdateTime,jdbcType=TIMESTAMP},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.xiangliheart.eob.platform.auth.entity.EobAmCustomer">
+        update tb_am_customer
+        <set>
+            <if test="regionCode != null">
+                region_code = #{regionCode,jdbcType=VARCHAR},
+            </if>
+            <if test="name != null">
+                name = #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="status != null">
+                status = #{status,jdbcType=INTEGER},
+            </if>
+            <if test="createBy != null">
+                create_by = #{createBy,jdbcType=VARCHAR},
+            </if>
+            <if test="createTime != null">
+                create_time = #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="lastUpdateBy != null">
+                last_update_by = #{lastUpdateBy,jdbcType=VARCHAR},
+            </if>
+            <if test="lastUpdateTime != null">
+                last_update_time = #{lastUpdateTime,jdbcType=TIMESTAMP},
+            </if>
+        </set>
+        where id = #{id,jdbcType=VARCHAR}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.xiangliheart.eob.platform.auth.entity.EobAmCustomer">
+        update tb_am_customer
+        set region_code      = #{regionCode,jdbcType=VARCHAR},
+            name             = #{name,jdbcType=VARCHAR},
+            status           = #{status,jdbcType=INTEGER},
+            create_by        = #{createBy,jdbcType=VARCHAR},
+            create_time      = #{createTime,jdbcType=TIMESTAMP},
+            last_update_by   = #{lastUpdateBy,jdbcType=VARCHAR},
+            last_update_time = #{lastUpdateTime,jdbcType=TIMESTAMP}
+        where id = #{id,jdbcType=VARCHAR}
+    </update>
+    <select id="selectPage" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from tb_am_customer
+    </select>
+</mapper>
