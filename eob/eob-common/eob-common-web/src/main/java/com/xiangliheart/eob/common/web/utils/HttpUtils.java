@@ -9,11 +9,11 @@ import java.io.IOException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.xiangliheart.eob.common.web.http.HttpResult;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
-import com.alibaba.fastjson.JSONObject;
 
 /**
  * HttpUtils HTTP工具类
@@ -42,7 +42,8 @@ public class HttpUtils {
     public static void write(HttpServletResponse response, Object data) throws IOException {
         response.setContentType("application/json; charset=utf-8");
         HttpResult result = HttpResult.ok(data);
-        String json = JSONObject.toJSONString(result);
+        ObjectMapper mapper = new ObjectMapper();
+        String json = mapper.writeValueAsString(result);
         response.getWriter().print(json);
         response.getWriter().flush();
         response.getWriter().close();
