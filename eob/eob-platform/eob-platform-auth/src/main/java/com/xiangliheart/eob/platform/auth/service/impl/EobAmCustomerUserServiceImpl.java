@@ -14,7 +14,7 @@ import java.util.Set;
  * @auther: xiangliheart(湘澧寸心)
  * @since: 2022/7/10
  */
-@Service("customerUserService")
+@Service
 public class EobAmCustomerUserServiceImpl implements EobAmCustomerUserService {
     @Override
     public EobAmCustomerUser findByCustomerUserName(String name) {

@@ -134,4 +134,5 @@
         <include refid="Base_Column_List"/>
         from tb_am_customer
     </select>
+    <select id="selectAll" resultType="com.xiangliheart.eob.platform.auth.entity.EobAmCustomer"></select>
 </mapper>

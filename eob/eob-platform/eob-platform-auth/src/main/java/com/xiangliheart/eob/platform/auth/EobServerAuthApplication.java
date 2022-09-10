@@ -5,9 +5,10 @@
 package com.xiangliheart.eob.platform.auth;
 
 import org.mybatis.spring.annotation.MapperScan;
+import org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
+import org.springframework.context.annotation.ComponentScan;
 
 /**
  * EobServerAuthApplication
@@ -16,7 +17,7 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
  * @since: 2022/7/2
  */
 @SpringBootApplication
-@MapperScan("com.xiangliheart.eob")
+@MapperScan("com.xiangliheart.eob.platform.auth.dao")
 public class EobServerAuthApplication {
 
     public static void main(String[] args) {
