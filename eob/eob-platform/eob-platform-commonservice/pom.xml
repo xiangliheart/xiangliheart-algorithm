@@ -4,22 +4,18 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.xiangliheart.eob</groupId>
-        <artifactId>eob-pom</artifactId>
+        <artifactId>eob-platform</artifactId>
         <version>1.0.0-SNAPSHOT</version>
-        <relativePath>../eob-pom/pom.xml</relativePath>
+        <relativePath>../../eob-platform/pom.xml</relativePath>
     </parent>
     <groupId>com.xiangliheart.eob</groupId>
-    <artifactId>eob-platform</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
-    <name>eob-platform</name>
-    <description>eob-platform</description>
-    <packaging>pom</packaging>
+    <artifactId>eob-platform-commmonservice</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>eob-platform-commmonservice</name>
+    <description>eob-platform-commmonservice</description>
     <properties>
         <java.version>1.8</java.version>
     </properties>
-    <modules>
-        <module>eob-platform-auth</module>
-        <module>eob-platform-workflow</module>
-        <module>eob-platform-commonservice</module>
-    </modules>
+    <dependencies>
+    </dependencies>
 </project>
