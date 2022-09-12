@@ -2,7 +2,7 @@
  * Copyright (c) 2022-2022 xiangliheart(湘澧寸心) All rights reserved.
  */
 
-package com.xiangliheart.eob.platform.commmonservice;
+package com.xiangliheart.eob.platform.commonservice;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -14,8 +14,7 @@ import org.springframework.boot.test.context.SpringBootTest;
  * @since: 2022/9/12
  */
 @SpringBootTest
-class EobPlatformCommmonserviceApplicationTests {
-
+class EobPlatformCommonServiceApplicationTests {
     @Test
     void contextLoads() {
     }

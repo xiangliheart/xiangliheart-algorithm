@@ -10,12 +10,24 @@
     </parent>
     <groupId>com.xiangliheart.eob</groupId>
     <artifactId>eob-platform-commmonservice</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0.0-SNAPSHOT</version>
     <name>eob-platform-commmonservice</name>
     <description>eob-platform-commmonservice</description>
     <properties>
         <java.version>1.8</java.version>
     </properties>
     <dependencies>
+        <dependency>
+            <groupId>com.xiangliheart.eob</groupId>
+            <artifactId>eob-common-swagger</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.xiangliheart.eob</groupId>
+            <artifactId>eob-common-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.xiangliheart.eob</groupId>
+            <artifactId>eob-common-repository</artifactId>
+        </dependency>
     </dependencies>
 </project>

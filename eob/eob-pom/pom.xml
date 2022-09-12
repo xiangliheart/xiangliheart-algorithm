@@ -26,6 +26,8 @@
         <eob-project.version>1.0.0-SNAPSHOT</eob-project.version>
         <eob-kaptcha.version>0.0.9</eob-kaptcha.version>
         <java.version>1.8</java.version>
+        <eob-activiti-spring-boot-starter.version>7.0.0.GA</eob-activiti-spring-boot-starter.version>
+        <eob-slf4j-simple.version>1.7.36</eob-slf4j-simple.version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -103,6 +105,16 @@
                 <groupId>com.xiangliheart.eob</groupId>
                 <artifactId>eob-common-repository</artifactId>
                 <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.activiti</groupId>
+                <artifactId>activiti-spring-boot-starter</artifactId>
+                <version>${eob-activiti-spring-boot-starter.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-simple</artifactId>
+                <version>${eob-slf4j-simple.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
