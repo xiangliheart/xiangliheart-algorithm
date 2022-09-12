@@ -4,7 +4,7 @@
 
 package com.xiangliheart.eob.platform.auth.controller;
 
-import com.xiangliheart.eob.platform.auth.utils.pagehelper.PageRequest;
+import com.xiangliheart.eob.common.repository.pagehelper.PageRequest;
 import com.xiangliheart.eob.platform.auth.entity.EobAmCustomer;
 import com.xiangliheart.eob.platform.auth.service.EobAmCustomerService;
 import io.swagger.annotations.Api;

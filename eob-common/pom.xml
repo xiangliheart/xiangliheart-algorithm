@@ -15,15 +15,23 @@
     <description>eob-common</description>
     <packaging>pom</packaging>
     <modules>
+        <module>eob-common-starter</module>
         <module>eob-common-utils</module>
         <module>eob-common-swagger</module>
         <module>eob-common-web</module>
         <module>eob-common-repository</module>
+        <module>eob-common-security</module>
     </modules>
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
+            <exclusions>
+                <exclusion>
+                    <artifactId>logback-classic</artifactId>
+                    <groupId>ch.qos.logback</groupId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>

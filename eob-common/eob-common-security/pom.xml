@@ -8,20 +8,22 @@
         <version>1.0.0-SNAPSHOT</version>
     </parent>
     <groupId>com.xiangliheart.eob</groupId>
-    <artifactId>eob-common-swagger</artifactId>
+    <artifactId>eob-common-security</artifactId>
     <version>1.0.0-SNAPSHOT</version>
-    <name>eob-common-swagger</name>
-    <description>eob-common-swagger</description>
+    <name>eob-common-security</name>
+    <description>eob-common-security</description>
     <dependencies>
         <dependency>
-            <groupId>com.github.xiaoymin</groupId>
-            <artifactId>knife4j-spring-boot-starter</artifactId>
-            <exclusions>
-                <exclusion>
-                    <artifactId>swagger-annotations</artifactId>
-                    <groupId>io.swagger.core.v3</groupId>
-                </exclusion>
-            </exclusions>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.github.axet</groupId>
+            <artifactId>kaptcha</artifactId>
         </dependency>
     </dependencies>
 </project>

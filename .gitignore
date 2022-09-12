@@ -33,3 +33,9 @@ hs_err_pid*
 /eob-common/eob-common-utils/target/
 /eob-common/eob-common-swagger/target/
 /eob-common/eob-common-repository/target/
+/eob-common/eob-common-security/.mvn/
+/eob-common/eob-common-starter/.mvn/
+/eob-common/eob-common-starter/target/
+/eob-common/eob-common-security/target/
+/eob-common/eob-common-security/eob-common-security.iml
+/eob-common/eob-common-starter/eob-common-starter.iml

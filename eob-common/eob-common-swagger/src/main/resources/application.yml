@@ -8,8 +8,3 @@ knife4j-property:
   name: xiangliheart(湘澧寸心)
   url: www.xiangliheart.com
   email: xiangliheart@163.com
-
-spring:
-  mvc:
-    pathmatch:
-      matching-strategy: ant_path_matcher

@@ -1,0 +1,29 @@
+package com.xiangliheart.eob.common.security.security;
+
+import org.springframework.security.core.GrantedAuthority;
+
+/**
+ * GrantedAuthorityImpl 权限封装
+ *
+ * @auther: xiangliheart(湘澧寸心)
+ * @since: 2022/7/10
+ */
+public class GrantedAuthorityImpl implements GrantedAuthority {
+
+    private static final long serialVersionUID = 1L;
+
+    private String authority;
+
+    public GrantedAuthorityImpl(String authority) {
+        this.authority = authority;
+    }
+
+    public void setAuthority(String authority) {
+        this.authority = authority;
+    }
+
+    @Override
+    public String getAuthority() {
+        return this.authority;
+    }
+}

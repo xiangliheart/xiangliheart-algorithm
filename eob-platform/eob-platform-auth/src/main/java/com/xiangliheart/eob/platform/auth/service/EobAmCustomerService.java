@@ -4,10 +4,9 @@
 
 package com.xiangliheart.eob.platform.auth.service;
 
-import com.xiangliheart.eob.platform.auth.utils.pagehelper.PageRequest;
-import com.xiangliheart.eob.platform.auth.utils.pagehelper.PageResult;
+import com.xiangliheart.eob.common.repository.pagehelper.PageRequest;
+import com.xiangliheart.eob.common.repository.pagehelper.PageResult;
 import com.xiangliheart.eob.platform.auth.entity.EobAmCustomer;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 

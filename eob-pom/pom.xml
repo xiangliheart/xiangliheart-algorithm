@@ -28,6 +28,7 @@
         <java.version>1.8</java.version>
         <eob-activiti-spring-boot-starter.version>7.0.0.GA</eob-activiti-spring-boot-starter.version>
         <eob-slf4j-simple.version>1.7.36</eob-slf4j-simple.version>
+        <eob-mapstruct.version>1.5.2.Final</eob-mapstruct.version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -107,6 +108,16 @@
                 <version>${project.version}</version>
             </dependency>
             <dependency>
+                <groupId>com.xiangliheart.eob</groupId>
+                <artifactId>eob-common-security</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.xiangliheart.eob</groupId>
+                <artifactId>eob-common-starter</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
                 <groupId>org.activiti</groupId>
                 <artifactId>activiti-spring-boot-starter</artifactId>
                 <version>${eob-activiti-spring-boot-starter.version}</version>
@@ -115,6 +126,11 @@
                 <groupId>org.slf4j</groupId>
                 <artifactId>slf4j-simple</artifactId>
                 <version>${eob-slf4j-simple.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mapstruct</groupId>
+                <artifactId>mapstruct</artifactId>
+                <version>${eob-mapstruct.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

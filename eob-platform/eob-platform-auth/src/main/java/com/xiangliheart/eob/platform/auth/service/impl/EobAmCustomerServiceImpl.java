@@ -6,9 +6,9 @@ package com.xiangliheart.eob.platform.auth.service.impl;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import com.xiangliheart.eob.platform.auth.utils.pagehelper.PageRequest;
-import com.xiangliheart.eob.platform.auth.utils.pagehelper.PageResult;
-import com.xiangliheart.eob.platform.auth.utils.pagehelper.PageUtils;
+import com.xiangliheart.eob.common.repository.pagehelper.PageRequest;
+import com.xiangliheart.eob.common.repository.pagehelper.PageResult;
+import com.xiangliheart.eob.common.repository.pagehelper.PageUtils;
 import com.xiangliheart.eob.platform.auth.dao.EobAmCustomerMapper;
 import com.xiangliheart.eob.platform.auth.entity.EobAmCustomer;
 import com.xiangliheart.eob.platform.auth.service.EobAmCustomerService;

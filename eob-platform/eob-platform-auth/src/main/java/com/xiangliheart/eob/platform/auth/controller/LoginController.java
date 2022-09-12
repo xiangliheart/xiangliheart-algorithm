@@ -2,11 +2,11 @@ package com.xiangliheart.eob.platform.auth.controller;
 
 import com.google.code.kaptcha.Constants;
 import com.google.code.kaptcha.Producer;
+import com.xiangliheart.eob.common.security.security.JwtAuthenticatioToken;
+import com.xiangliheart.eob.common.security.utils.SecurityUtils;
+import com.xiangliheart.eob.common.utils.PasswordUtils;
 import com.xiangliheart.eob.common.web.http.HttpResult;
-import com.xiangliheart.eob.platform.auth.utils.security.PasswordUtils;
-import com.xiangliheart.eob.platform.auth.utils.security.SecurityUtils;
 import com.xiangliheart.eob.platform.auth.entity.EobAmCustomerUser;
-import com.xiangliheart.eob.platform.auth.security.JwtAuthenticatioToken;
 import com.xiangliheart.eob.platform.auth.service.EobAmCustomerUserService;
 import com.xiangliheart.eob.platform.auth.vo.LoginBean;
 import org.apache.tomcat.util.http.fileupload.IOUtils;

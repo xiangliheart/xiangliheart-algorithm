@@ -19,11 +19,7 @@
     <dependencies>
         <dependency>
             <groupId>com.xiangliheart.eob</groupId>
-            <artifactId>eob-common-repository</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.xiangliheart.eob</groupId>
-            <artifactId>eob-common-swagger</artifactId>
+            <artifactId>eob-common-starter</artifactId>
         </dependency>
         <dependency>
             <groupId>org.activiti</groupId>

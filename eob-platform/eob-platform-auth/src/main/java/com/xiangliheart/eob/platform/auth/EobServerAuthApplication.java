@@ -16,7 +16,7 @@ import org.springframework.context.annotation.ComponentScan;
  * @auther: xiangliheart(湘澧寸心)
  * @since: 2022/7/2
  */
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = {"com.xiangliheart.eob"})
 @MapperScan("com.xiangliheart.eob.platform.auth.dao")
 public class EobServerAuthApplication {
 
