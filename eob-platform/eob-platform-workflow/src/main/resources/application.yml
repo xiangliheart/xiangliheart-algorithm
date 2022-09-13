@@ -27,6 +27,20 @@ spring:
       pool-prepared-statements: true
       max-open-prepared-statements: 50
       max-pool-prepared-statement-per-connection-size: 20
+      filter:
+        commons-log:
+          data-source-log-enabled: true
+          statement-log-enabled: true
+          statement-executable-sql-log-enable: true
+        stat:
+          #开启sql统计
+          enabled: true
+          #使用的数据库类型
+          db-type: mysql
+          #是否打印慢查询sql脚本
+          log-slow-sql: true
+          #慢查询的时间，超过该时间才打印，单位毫秒
+          slow-sql-millis: 1000
   mvc:
     pathmatch:
       matching-strategy: ant_path_matcher

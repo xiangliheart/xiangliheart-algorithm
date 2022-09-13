@@ -154,6 +154,8 @@
                     <include>**/*.yml</include>
                     <include>**/*.xml</include>
                     <include>**/*.txt</include>
+                    <include>**/*.png</include>
+                    <include>**/*.bpmn</include>
                 </includes>
                 <filtering>false</filtering>
             </resource>
@@ -163,6 +165,8 @@
                     <include>**/*.yml</include>
                     <include>**/*.xml</include>
                     <include>**/*.txt</include>
+                    <include>**/*.png</include>
+                    <include>**/*.bpmn</include>
                 </includes>
                 <filtering>false</filtering>
             </resource>
