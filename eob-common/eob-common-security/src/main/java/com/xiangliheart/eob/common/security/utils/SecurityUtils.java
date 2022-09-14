@@ -96,5 +96,4 @@ public class SecurityUtils {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         return authentication;
     }
-
 }

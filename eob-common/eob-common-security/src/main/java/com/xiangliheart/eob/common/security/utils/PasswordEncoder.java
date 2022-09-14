@@ -29,10 +29,10 @@ public class PasswordEncoder {
     }
 
     /**
-     * 密码加密
+     * encode 密码加密
      *
-     * @param rawPass
-     * @return
+     * @auther: xiangliheart(湘澧寸心)
+     * @since: 2022/9/14
      */
     public String encode(String rawPass) {
         String result = null;
@@ -46,11 +46,10 @@ public class PasswordEncoder {
     }
 
     /**
-     * 密码匹配验证
+     * matches 密码匹配验证
      *
-     * @param encPass 密文
-     * @param rawPass 明文
-     * @return
+     * @auther: xiangliheart(湘澧寸心)
+     * @since: 2022/9/14
      */
     public boolean matches(String encPass, String rawPass) {
         String pass1 = "" + encPass;
@@ -63,7 +62,6 @@ public class PasswordEncoder {
         if (password == null) {
             password = "";
         }
-
         if ((salt == null) || "".equals(salt)) {
             return password;
         } else {
@@ -72,10 +70,10 @@ public class PasswordEncoder {
     }
 
     /**
-     * 转换字节数组为16进制字串
+     * byteArrayToHexString 转换字节数组为16进制字串
      *
-     * @param b 字节数组
-     * @return 16进制字串
+     * @auther: xiangliheart(湘澧寸心)
+     * @since: 2022/9/14
      */
     private String byteArrayToHexString(byte[] b) {
         StringBuffer resultSb = new StringBuffer();
@@ -86,10 +84,10 @@ public class PasswordEncoder {
     }
 
     /**
-     * 将字节转换为16进制
+     * byteToHexString 将字节转换为16进制
      *
-     * @param b
-     * @return
+     * @auther: xiangliheart(湘澧寸心)
+     * @since: 2022/9/14
      */
     private static String byteToHexString(byte b) {
         int n = b;
@@ -99,20 +97,4 @@ public class PasswordEncoder {
         int d2 = n % 16;
         return hexDigits[d1] + hexDigits[d2];
     }
-
-//	public static void main(String[] args) {
-//		String salt = "helloworld";
-//		PasswordEncoder encoderMd5 = new PasswordEncoder(salt, "MD5");
-//		String encode = encoderMd5.encode("test");
-//		System.out.println(encode);
-//		boolean passwordValid = encoderMd5.validPassword("1bd98ed329aebc7b2f89424b5a38926e", "test");
-//		System.out.println(passwordValid);
-//
-//		PasswordEncoder encoderSha = new PasswordEncoder(salt, "SHA");
-//		String pass2 = encoderSha.encode("test");
-//		System.out.println(pass2);
-//		boolean passwordValid2 = encoderSha.validPassword("1bd98ed329aebc7b2f89424b5a38926e", "test");
-//		System.out.println(passwordValid2);
-//	}
-
 }

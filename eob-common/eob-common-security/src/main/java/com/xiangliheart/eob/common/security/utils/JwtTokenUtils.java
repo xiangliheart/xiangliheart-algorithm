@@ -22,32 +22,26 @@ public class JwtTokenUtils implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    /**
-     * 用户名称
-     */
+    // 用户名称
     private static final String USERNAME = Claims.SUBJECT;
-    /**
-     * 创建时间
-     */
+
+    // 创建时间
     private static final String CREATED = "created";
-    /**
-     * 权限列表
-     */
+
+    // 权限列表
     private static final String AUTHORITIES = "authorities";
-    /**
-     * 密钥
-     */
+
+    // 密钥
     private static final String SECRET = "abcdefgh";
-    /**
-     * 有效期12小时
-     */
+
+    // 有效期12小时
     private static final long EXPIRE_TIME = 12 * 60 * 60 * 1000;
 
     /**
-     * 生成令牌
+     * generateToken 生成令牌
      *
-     * @param userDetails 用户
-     * @return 令牌
+     * @auther: xiangliheart(湘澧寸心)
+     * @since: 2022/9/14
      */
     public static String generateToken(Authentication authentication) {
         Map<String, Object> claims = new HashMap<>(3);
@@ -58,10 +52,10 @@ public class JwtTokenUtils implements Serializable {
     }
 
     /**
-     * 从数据声明生成令牌
+     * generateToken 从数据声明生成令牌
      *
-     * @param claims 数据声明
-     * @return 令牌
+     * @auther: xiangliheart(湘澧寸心)
+     * @since: 2022/9/14
      */
     private static String generateToken(Map<String, Object> claims) {
         Date expirationDate = new Date(System.currentTimeMillis() + EXPIRE_TIME);
@@ -69,10 +63,10 @@ public class JwtTokenUtils implements Serializable {
     }
 
     /**
-     * 从令牌中获取用户名
+     * getUsernameFromToken 从令牌中获取用户名
      *
-     * @param token 令牌
-     * @return 用户名
+     * @auther: xiangliheart(湘澧寸心)
+     * @since: 2022/9/14
      */
     public static String getUsernameFromToken(String token) {
         String username;
@@ -86,10 +80,10 @@ public class JwtTokenUtils implements Serializable {
     }
 
     /**
-     * 根据请求令牌获取登录认证信息
+     * getAuthenticationeFromToken 根据请求令牌获取登录认证信息
      *
-     * @param token 令牌
-     * @return 用户名
+     * @auther: xiangliheart(湘澧寸心)
+     * @since: 2022/9/14
      */
     public static Authentication getAuthenticationeFromToken(HttpServletRequest request) {
         Authentication authentication = null;
@@ -129,10 +123,10 @@ public class JwtTokenUtils implements Serializable {
     }
 
     /**
-     * 从令牌中获取数据声明
+     * getClaimsFromToken 从令牌中获取数据声明
      *
-     * @param token 令牌
-     * @return 数据声明
+     * @auther: xiangliheart(湘澧寸心)
+     * @since: 2022/9/14
      */
     private static Claims getClaimsFromToken(String token) {
         Claims claims;
@@ -145,11 +139,10 @@ public class JwtTokenUtils implements Serializable {
     }
 
     /**
-     * 验证令牌
+     * validateToken 验证令牌
      *
-     * @param token
-     * @param username
-     * @return
+     * @auther: xiangliheart(湘澧寸心)
+     * @since: 2022/9/14
      */
     public static Boolean validateToken(String token, String username) {
         String userName = getUsernameFromToken(token);
@@ -157,10 +150,10 @@ public class JwtTokenUtils implements Serializable {
     }
 
     /**
-     * 刷新令牌
+     * refreshToken 刷新令牌
      *
-     * @param token
-     * @return
+     * @auther: xiangliheart(湘澧寸心)
+     * @since: 2022/9/14
      */
     public static String refreshToken(String token) {
         String refreshedToken;
@@ -175,10 +168,10 @@ public class JwtTokenUtils implements Serializable {
     }
 
     /**
-     * 判断令牌是否过期
+     * isTokenExpired 判断令牌是否过期
      *
-     * @param token 令牌
-     * @return 是否过期
+     * @auther: xiangliheart(湘澧寸心)
+     * @since: 2022/9/14
      */
     public static Boolean isTokenExpired(String token) {
         try {
@@ -191,10 +184,10 @@ public class JwtTokenUtils implements Serializable {
     }
 
     /**
-     * 获取请求token
+     * getToken 获取请求token
      *
-     * @param request
-     * @return
+     * @auther: xiangliheart(湘澧寸心)
+     * @since: 2022/9/14
      */
     public static String getToken(HttpServletRequest request) {
         String token = request.getHeader("Authorization");
@@ -209,5 +202,4 @@ public class JwtTokenUtils implements Serializable {
         }
         return token;
     }
-
 }
