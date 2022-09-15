@@ -1,5 +1,6 @@
 package com.xiangliheart.eob.platform.auth.entity;
 
+import com.xiangliheart.eob.common.repository.entity.BaseEntity;
 import lombok.Builder;
 import lombok.Data;
 

@@ -1,4 +1,4 @@
-package com.xiangliheart.eob.platform.auth.entity;
+package com.xiangliheart.eob.common.repository.entity;
 
 import lombok.Data;
 

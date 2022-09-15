@@ -21,6 +21,7 @@
         <module>eob-common-web</module>
         <module>eob-common-repository</module>
         <module>eob-common-security</module>
+        <module>eob-common-cache</module>
     </modules>
     <dependencies>
         <dependency>

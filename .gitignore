@@ -39,3 +39,5 @@ hs_err_pid*
 /eob-common/eob-common-security/target/
 /eob-common/eob-common-security/eob-common-security.iml
 /eob-common/eob-common-starter/eob-common-starter.iml
+/eob-common/eob-common-cache/target/
+/eob-common/eob-common-cache/.mvn/

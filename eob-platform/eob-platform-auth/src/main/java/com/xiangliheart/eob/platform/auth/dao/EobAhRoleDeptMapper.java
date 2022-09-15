@@ -1,5 +1,10 @@
+/**
+ * Copyright (c) 2022-2022 xiangliheart(湘澧寸心) All rights reserved.
+ */
+
 package com.xiangliheart.eob.platform.auth.dao;
 
+import com.xiangliheart.eob.common.repository.mapper.CommonBaseMapper;
 import com.xiangliheart.eob.platform.auth.entity.EobAhRoleDept;
 
 /**
@@ -8,16 +13,5 @@ import com.xiangliheart.eob.platform.auth.entity.EobAhRoleDept;
  * @auther: xiangliheart(湘澧寸心)
  * @since: 2022/7/10
  */
-public interface EobAhRoleDeptMapper {
-    int deleteByPrimaryKey(Long id);
-
-    int insert(EobAhRoleDept row);
-
-    int insertSelective(EobAhRoleDept row);
-
-    EobAhRoleDept selectByPrimaryKey(Long id);
-
-    int updateByPrimaryKeySelective(EobAhRoleDept row);
-
-    int updateByPrimaryKey(EobAhRoleDept row);
+public interface EobAhRoleDeptMapper extends CommonBaseMapper<EobAhRoleDept> {
 }

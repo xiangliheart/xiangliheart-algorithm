@@ -12,8 +12,10 @@ import com.xiangliheart.eob.common.repository.pagehelper.PageUtils;
 import com.xiangliheart.eob.platform.auth.dao.EobAmCustomerMapper;
 import com.xiangliheart.eob.platform.auth.entity.EobAmCustomer;
 import com.xiangliheart.eob.platform.auth.service.EobAmCustomerService;
+import org.apache.ibatis.session.RowBounds;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import tk.mybatis.mapper.entity.Example;
 
 import java.util.List;
 
@@ -23,7 +25,7 @@ import java.util.List;
  * @auther: xiangliheart(湘澧寸心)
  * @since: 2022/7/2
  */
-@Service
+@Service("eobAmCustomerService")
 public class EobAmCustomerServiceImpl implements EobAmCustomerService {
 
     @Autowired
@@ -50,6 +52,8 @@ public class EobAmCustomerServiceImpl implements EobAmCustomerService {
      */
     @Override
     public int insert(EobAmCustomer eobAmCustomer) {
+        Example example = new Example(EobAmCustomer.class);
+
         return eobAmCustomerMapper.insert(eobAmCustomer);
     }
 
@@ -131,10 +135,9 @@ public class EobAmCustomerServiceImpl implements EobAmCustomerService {
      * @since: 2022/7/9
      */
     private PageInfo<EobAmCustomer> getPageInfo(PageRequest pageRequest) {
-        int pageNum = pageRequest.getPageNum();
-        int pageSize = pageRequest.getPageSize();
-        PageHelper.startPage(pageNum, pageSize);
-        List<EobAmCustomer> eobAmCustomers = eobAmCustomerMapper.selectPage();
+        RowBounds rowBounds = new RowBounds(pageRequest.getPageNum(), pageRequest.getPageSize());
+        Example example = new Example(EobAmCustomer.class);
+        List<EobAmCustomer> eobAmCustomers = eobAmCustomerMapper.selectByExampleAndRowBounds(example, rowBounds);
         return new PageInfo<EobAmCustomer>(eobAmCustomers);
     }
 }

@@ -36,3 +36,9 @@ pagehelper:
   reasonable: true
   supportMethodsArguments: true
   params: count=countSql
+
+config:
+  stopBubbling: true
+lombok:
+  equalsAndHashCode:
+    callSuper: call
