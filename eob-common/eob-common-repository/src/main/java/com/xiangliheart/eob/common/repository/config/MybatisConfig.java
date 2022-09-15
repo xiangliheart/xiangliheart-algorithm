@@ -8,7 +8,6 @@ import javax.sql.DataSource;
 
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
-import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -21,7 +20,6 @@ import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
  * @since: 2022/7/2
  */
 @Configuration
-@MapperScan("com.xiangliheart.eob")
 public class MybatisConfig {
     @Autowired
     private DataSource dataSource;

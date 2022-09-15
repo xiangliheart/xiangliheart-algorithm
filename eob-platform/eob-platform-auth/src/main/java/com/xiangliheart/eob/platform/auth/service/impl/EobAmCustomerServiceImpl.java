@@ -4,7 +4,6 @@
 
 package com.xiangliheart.eob.platform.auth.service.impl;
 
-import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.xiangliheart.eob.common.repository.pagehelper.PageRequest;
 import com.xiangliheart.eob.common.repository.pagehelper.PageResult;
@@ -13,10 +12,10 @@ import com.xiangliheart.eob.platform.auth.dao.EobAmCustomerMapper;
 import com.xiangliheart.eob.platform.auth.entity.EobAmCustomer;
 import com.xiangliheart.eob.platform.auth.service.EobAmCustomerService;
 import org.apache.ibatis.session.RowBounds;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tk.mybatis.mapper.entity.Example;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 /**
@@ -25,10 +24,10 @@ import java.util.List;
  * @auther: xiangliheart(湘澧寸心)
  * @since: 2022/7/2
  */
-@Service("eobAmCustomerService")
+@Service
 public class EobAmCustomerServiceImpl implements EobAmCustomerService {
 
-    @Autowired
+    @Resource
     EobAmCustomerMapper eobAmCustomerMapper;
 
     /**
