@@ -13,7 +13,6 @@
         </constructor>
     </resultMap>
     <sql id="Base_Column_List">
-        id
-        , role_id, dept_id, create_by, create_time, last_update_by, last_update_time
+        id, role_id, dept_id, create_by, create_time, last_update_by, last_update_time
     </sql>
 </mapper>

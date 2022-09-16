@@ -18,8 +18,7 @@
         </constructor>
     </resultMap>
     <sql id="Base_Column_List">
-        id
-        , value, label, type, description, sort, create_by, create_time, last_update_by,
+        id, value, label, type, description, sort, create_by, create_time, last_update_by,
     last_update_time, remarks, del_flag
     </sql>
 </mapper>

@@ -1,3 +1,7 @@
+/**
+ * Copyright (c) 2022-2022 xiangliheart(湘澧寸心) All rights reserved.
+ */
+
 package com.xiangliheart.eob.platform.auth.service;
 
 import com.xiangliheart.eob.platform.auth.entity.EobAmCustomerUser;
@@ -7,18 +11,18 @@ import java.util.Set;
 public interface EobAmCustomerUserService {
 
     /**
-     * 根据用户名查找用户
+     * findByCustomerUserName 根据用户名查找用户
      *
-     * @param username
-     * @return
+     * @auther: xiangliheart(湘澧寸心)
+     * @since: 2022/9/16
      */
     EobAmCustomerUser findByCustomerUserName(String customerUserName);
 
     /**
-     * 查找用户的菜单权限标识集合
+     * findPermissions 查找用户的菜单权限标识集合
      *
-     * @param userName
-     * @return
+     * @auther: xiangliheart(湘澧寸心)
+     * @since: 2022/9/16
      */
     Set<String> findPermissions(String customerUserName);
 }

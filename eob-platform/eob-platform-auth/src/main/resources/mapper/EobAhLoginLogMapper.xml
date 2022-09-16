@@ -14,7 +14,6 @@
         </constructor>
     </resultMap>
     <sql id="Base_Column_List">
-        id
-        , user_name, status, ip, create_by, create_time, last_update_by, last_update_time
+        id, user_name, status, ip, create_by, create_time, last_update_by, last_update_time
     </sql>
 </mapper>
