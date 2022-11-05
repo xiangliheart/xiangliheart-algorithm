@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.xiangliheart.general.platform</groupId>
+        <artifactId>general-platform-service</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+        <relativePath>../../general-platform-service/pom.xml</relativePath>
+    </parent>
+    <groupId>com.xiangliheart.general.platform</groupId>
+    <artifactId>general-platform-service-admin</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <name>general-platform-service-admin</name>
+    <description>general-platform-service-admin</description>
+    <properties>
+        <java.version>1.8</java.version>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>com.xiangliheart.general.platform</groupId>
+            <artifactId>general-platform-common-starter</artifactId>
+        </dependency>
+    </dependencies>
+</project>
