@@ -4,9 +4,10 @@
 
 package com.xiangliheart.eob.common.repository.config;
 
-import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
+
+import lombok.Data;
 
 /**
  * DruidDataSourceProperties

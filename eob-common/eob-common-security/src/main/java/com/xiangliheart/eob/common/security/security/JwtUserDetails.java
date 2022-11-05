@@ -1,10 +1,11 @@
 package com.xiangliheart.eob.common.security.security;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import java.util.Collection;
+
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import java.util.Collection;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * JwtUserDetails 安全用户模型
@@ -21,7 +22,8 @@ public class JwtUserDetails implements UserDetails {
     private String salt;
     private Collection<? extends GrantedAuthority> authorities;
 
-    public JwtUserDetails(String username, String password, String salt, Collection<? extends GrantedAuthority> authorities) {
+    public JwtUserDetails(String username, String password, String salt,
+        Collection<? extends GrantedAuthority> authorities) {
         this.username = username;
         this.password = password;
         this.salt = salt;

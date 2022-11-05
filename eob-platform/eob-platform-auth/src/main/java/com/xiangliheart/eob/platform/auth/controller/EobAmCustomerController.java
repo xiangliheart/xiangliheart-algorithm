@@ -4,15 +4,17 @@
 
 package com.xiangliheart.eob.platform.auth.controller;
 
-import com.xiangliheart.eob.common.repository.pagehelper.PageRequest;
-import com.xiangliheart.eob.platform.auth.entity.EobAmCustomer;
-import com.xiangliheart.eob.platform.auth.service.EobAmCustomerService;
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
+import com.xiangliheart.eob.common.repository.pagehelper.PageRequest;
+import com.xiangliheart.eob.platform.auth.entity.EobAmCustomer;
+import com.xiangliheart.eob.platform.auth.service.EobAmCustomerService;
+
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 
 /**
  * EobAmCustomerController
@@ -26,7 +28,6 @@ import java.util.List;
 public class EobAmCustomerController {
     @Autowired
     EobAmCustomerService eobAmCustomerService;
-
 
     /**
      * createtSingle

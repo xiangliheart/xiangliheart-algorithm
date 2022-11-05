@@ -1,5 +1,22 @@
 package com.xiangliheart.eob.platform.auth.controller;
 
+import java.awt.image.BufferedImage;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
+import javax.servlet.ServletException;
+import javax.servlet.ServletOutputStream;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.tomcat.util.http.fileupload.IOUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
 import com.google.code.kaptcha.Constants;
 import com.google.code.kaptcha.Producer;
 import com.xiangliheart.eob.common.security.security.JwtAuthenticatioToken;
@@ -9,21 +26,6 @@ import com.xiangliheart.eob.common.web.http.HttpResult;
 import com.xiangliheart.eob.platform.auth.entity.EobAmCustomerUser;
 import com.xiangliheart.eob.platform.auth.service.EobAmCustomerUserService;
 import com.xiangliheart.eob.platform.auth.vo.LoginBean;
-import org.apache.tomcat.util.http.fileupload.IOUtils;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
-
-import javax.imageio.ImageIO;
-import javax.servlet.ServletException;
-import javax.servlet.ServletOutputStream;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.awt.image.BufferedImage;
-import java.io.IOException;
 
 /**
  * LoginController 登录控制器

@@ -4,8 +4,6 @@
 
 package com.xiangliheart.eob.platform.workflow;
 
-import com.xiangliheart.eob.platform.workflow.utils.SecurityUtil;
-import lombok.extern.slf4j.Slf4j;
 import org.activiti.api.process.model.ProcessDefinition;
 import org.activiti.api.process.model.ProcessInstance;
 import org.activiti.api.process.model.builders.ProcessPayloadBuilder;
@@ -19,6 +17,10 @@ import org.activiti.engine.RepositoryService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+
+import com.xiangliheart.eob.platform.workflow.utils.SecurityUtil;
+
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * EobPlatformWorkflowApplicationTest
@@ -58,8 +60,7 @@ public class EobPlatformWorkflowApplicationTest {
     @Test
     public void testQueryProcessDefinitions() {
         securityUtil.logInAs("system");
-        Page<ProcessDefinition> processDefinitionPage =
-                processRuntime.processDefinitions(Pageable.of(0, 10));
+        Page<ProcessDefinition> processDefinitionPage = processRuntime.processDefinitions(Pageable.of(0, 10));
         log.info("可用的流程定义数量:" + processDefinitionPage.getTotalItems());
         for (ProcessDefinition processDefinition : processDefinitionPage.getContent()) {
             log.info("流程定义：" + processDefinition);
@@ -74,11 +75,8 @@ public class EobPlatformWorkflowApplicationTest {
      */
     @Test
     public void testDeployProcess() {
-        repositoryService.createDeployment()
-                .addClasspathResource("bpmn/LeaveProcess.bpmn")
-                .addClasspathResource("bpmn/LeaveProcess.png")
-                .name("请假申请单")
-                .deploy();
+        repositoryService.createDeployment().addClasspathResource("bpmn/LeaveProcess.bpmn")
+            .addClasspathResource("bpmn/LeaveProcess.png").name("请假申请单").deploy();
     }
 
     /**
@@ -91,11 +89,7 @@ public class EobPlatformWorkflowApplicationTest {
     public void testBuildProcessInstance() {
         securityUtil.logInAs("system");
         ProcessInstance processInstance =
-                processRuntime.start(ProcessPayloadBuilder
-                        .start()
-                        .withProcessDefinitionKey("LeaveProcess")
-                        .build()
-                );
+            processRuntime.start(ProcessPayloadBuilder.start().withProcessDefinitionKey("LeaveProcess").build());
         log.info("流程实例id:" + processInstance.getId());
     }
 
@@ -112,17 +106,9 @@ public class EobPlatformWorkflowApplicationTest {
         if (tasks != null && tasks.getTotalItems() > 0) {
             for (Task task : tasks.getContent()) {
                 // 拾取任务
-                taskRuntime.claim(TaskPayloadBuilder
-                        .claim()
-                        .withTaskId(task.getId())
-                        .build()
-                );
+                taskRuntime.claim(TaskPayloadBuilder.claim().withTaskId(task.getId()).build());
                 log.info("任务：" + task);
-                taskRuntime.complete(TaskPayloadBuilder
-                        .complete()
-                        .withTaskId(task.getId())
-                        .build()
-                );
+                taskRuntime.complete(TaskPayloadBuilder.complete().withTaskId(task.getId()).build());
             }
         }
         Page<Task> taskPage = taskRuntime.tasks(Pageable.of(0, 10));

@@ -4,11 +4,7 @@
 
 package com.xiangliheart.eob.common.utils;
 
-import java.io.BufferedInputStream;
-import java.io.BufferedOutputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.InputStream;
+import java.io.*;
 
 import javax.servlet.http.HttpServletResponse;
 
@@ -27,7 +23,8 @@ public class FileUtils {
      */
     public static void downloadFile(HttpServletResponse response, File file, String newFileName) {
         try {
-            response.setHeader("Content-Disposition", "attachment; filename=" + new String(newFileName.getBytes("ISO-8859-1"), "UTF-8"));
+            response.setHeader("Content-Disposition",
+                "attachment; filename=" + new String(newFileName.getBytes("ISO-8859-1"), "UTF-8"));
             BufferedOutputStream bos = new BufferedOutputStream(response.getOutputStream());
             InputStream is = new FileInputStream(file.getAbsolutePath());
             BufferedInputStream bis = new BufferedInputStream(is);

@@ -1,18 +1,19 @@
 package com.xiangliheart.eob.platform.workflow.config;
 
-import lombok.extern.slf4j.Slf4j;
+import java.lang.reflect.Field;
+import java.util.List;
+import java.util.stream.Collectors;
+
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.util.ReflectionUtils;
 import org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping;
+
+import lombok.extern.slf4j.Slf4j;
 import springfox.documentation.spring.web.plugins.WebFluxRequestHandlerProvider;
 import springfox.documentation.spring.web.plugins.WebMvcRequestHandlerProvider;
-
-import java.lang.reflect.Field;
-import java.util.List;
-import java.util.stream.Collectors;
 
 @Slf4j
 @Configuration
@@ -29,25 +30,23 @@ public class BeanPostProcessorConfig {
                 return bean;
             }
 
-            private <T extends RequestMappingInfoHandlerMapping> void customizeSpringfoxHandlerMappings(List<T> mappings) {
-                List<T> copy = mappings.stream()
-                        .filter(mapping -> mapping.getPatternParser() == null)
-                        .collect(Collectors.toList());
+            private <T extends RequestMappingInfoHandlerMapping> void
+                customizeSpringfoxHandlerMappings(List<T> mappings) {
+                List<T> copy = mappings.stream().filter(mapping -> mapping.getPatternParser() == null)
+                    .collect(Collectors.toList());
                 mappings.clear();
                 mappings.addAll(copy);
             }
 
-            @SuppressWarnings("unchecked")
             private List<RequestMappingInfoHandlerMapping> getHandlerMappings(Object bean) {
                 try {
                     Field field = ReflectionUtils.findField(bean.getClass(), "handlerMappings");
                     field.setAccessible(true);
-                    return (List<RequestMappingInfoHandlerMapping>) field.get(bean);
+                    return (List<RequestMappingInfoHandlerMapping>)field.get(bean);
                 } catch (IllegalArgumentException | IllegalAccessException e) {
                     throw new IllegalStateException(e);
                 }
             }
         };
     }
-
 }

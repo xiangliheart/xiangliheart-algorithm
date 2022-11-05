@@ -9,11 +9,11 @@ import java.io.IOException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.xiangliheart.eob.common.web.http.HttpResult;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.xiangliheart.eob.common.web.http.HttpResult;
 
 /**
  * HttpUtils HTTP工具类
@@ -30,7 +30,7 @@ public class HttpUtils {
      * @since: 2022/7/20
      */
     public static HttpServletRequest getHttpServletRequest() {
-        return ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
+        return ((ServletRequestAttributes)RequestContextHolder.getRequestAttributes()).getRequest();
     }
 
     /**

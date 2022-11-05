@@ -1,16 +1,19 @@
 package com.xiangliheart.eob.common.security.utils;
 
-import com.xiangliheart.eob.common.security.security.GrantedAuthorityImpl;
-import com.xiangliheart.eob.common.security.security.JwtAuthenticatioToken;
-import io.jsonwebtoken.Claims;
-import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.SignatureAlgorithm;
+import java.io.Serializable;
+import java.util.*;
+
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 
-import javax.servlet.http.HttpServletRequest;
-import java.io.Serializable;
-import java.util.*;
+import com.xiangliheart.eob.common.security.security.GrantedAuthorityImpl;
+import com.xiangliheart.eob.common.security.security.JwtAuthenticatioToken;
+
+import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.SignatureAlgorithm;
 
 /**
  * JwtTokenUtils JWT工具类
@@ -59,7 +62,8 @@ public class JwtTokenUtils implements Serializable {
      */
     private static String generateToken(Map<String, Object> claims) {
         Date expirationDate = new Date(System.currentTimeMillis() + EXPIRE_TIME);
-        return Jwts.builder().setClaims(claims).setExpiration(expirationDate).signWith(SignatureAlgorithm.HS512, SECRET).compact();
+        return Jwts.builder().setClaims(claims).setExpiration(expirationDate).signWith(SignatureAlgorithm.HS512, SECRET)
+            .compact();
     }
 
     /**
@@ -107,8 +111,8 @@ public class JwtTokenUtils implements Serializable {
                 Object authors = claims.get(AUTHORITIES);
                 List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
                 if (authors != null && authors instanceof List) {
-                    for (Object object : (List) authors) {
-                        authorities.add(new GrantedAuthorityImpl((String) ((Map) object).get("authority")));
+                    for (Object object : (List)authors) {
+                        authorities.add(new GrantedAuthorityImpl((String)((Map)object).get("authority")));
                     }
                 }
                 authentication = new JwtAuthenticatioToken(username, null, authorities, token);

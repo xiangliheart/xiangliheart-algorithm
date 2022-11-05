@@ -13,5 +13,4 @@ import com.xiangliheart.eob.platform.auth.entity.EobCmConfig;
  * @auther: xiangliheart(湘澧寸心)
  * @since: 2022/7/10
  */
-public interface EobCmConfigMapper extends CommonBaseMapper<EobCmConfig> {
-}
+public interface EobCmConfigMapper extends CommonBaseMapper<EobCmConfig> {}

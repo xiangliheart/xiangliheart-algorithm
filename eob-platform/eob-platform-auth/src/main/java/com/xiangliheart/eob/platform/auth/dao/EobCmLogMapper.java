@@ -13,5 +13,4 @@ import com.xiangliheart.eob.platform.auth.entity.EobCmLog;
  * @auther: xiangliheart(湘澧寸心)
  * @since: 2022/7/10
  */
-public interface EobCmLogMapper extends CommonBaseMapper<EobCmLog> {
-}
+public interface EobCmLogMapper extends CommonBaseMapper<EobCmLog> {}

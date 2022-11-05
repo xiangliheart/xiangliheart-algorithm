@@ -2,8 +2,8 @@ server:
   port: 80
   tomcat:
     uri-encoding: UTF-8
-    max-threads: 1000
-    min-spare-threads: 30
+  servlet:
+    context-path: /eob/platform/auth
 spring:
   datasource:
     name: druidDataSource
@@ -27,18 +27,9 @@ spring:
       pool-prepared-statements: true
       max-open-prepared-statements: 50
       max-pool-prepared-statement-per-connection-size: 20
-  mvc:
-    pathmatch:
-      matching-strategy: ant_path_matcher
 # pagehelper
 pagehelper:
   helperDialect: mysql
   reasonable: true
   supportMethodsArguments: true
   params: count=countSql
-
-config:
-  stopBubbling: true
-lombok:
-  equalsAndHashCode:
-    callSuper: call

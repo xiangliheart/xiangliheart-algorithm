@@ -13,5 +13,4 @@ import com.xiangliheart.eob.platform.auth.entity.EobStDept;
  * @auther: xiangliheart(湘澧寸心)
  * @since: 2022/7/10
  */
-public interface EobStDeptMapper extends CommonBaseMapper<EobStDept> {
-}
+public interface EobStDeptMapper extends CommonBaseMapper<EobStDept> {}

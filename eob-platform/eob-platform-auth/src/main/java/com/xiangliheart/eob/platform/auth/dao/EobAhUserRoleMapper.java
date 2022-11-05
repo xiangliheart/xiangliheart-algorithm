@@ -13,5 +13,4 @@ import com.xiangliheart.eob.platform.auth.entity.EobAhUserRole;
  * @auther: xiangliheart(湘澧寸心)
  * @since: 2022/7/10
  */
-public interface EobAhUserRoleMapper extends CommonBaseMapper<EobAhUserRole> {
-}
+public interface EobAhUserRoleMapper extends CommonBaseMapper<EobAhUserRole> {}

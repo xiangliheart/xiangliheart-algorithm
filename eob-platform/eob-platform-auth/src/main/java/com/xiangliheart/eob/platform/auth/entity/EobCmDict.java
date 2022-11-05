@@ -1,10 +1,11 @@
 package com.xiangliheart.eob.platform.auth.entity;
 
+import java.io.Serializable;
+
 import com.xiangliheart.eob.common.repository.entity.BaseEntity;
+
 import lombok.Builder;
 import lombok.Data;
-
-import java.io.Serializable;
 
 /**
  * EobCmDict
@@ -15,17 +16,11 @@ import java.io.Serializable;
 @Data
 @Builder
 public class EobCmDict extends BaseEntity implements Serializable {
-    private String value;
-
-    private String label;
-
-    private String type;
-
-    private String description;
-
-    private Long sort;
-
-    private String remarks;
-
     private static final long serialVersionUID = 1L;
+    private String value;
+    private String label;
+    private String type;
+    private String description;
+    private Long sort;
+    private String remarks;
 }

@@ -10,5 +10,4 @@ package com.xianliheart.eob.common.cache.config;
  * @auther: xiangliheart(湘澧寸心)
  * @since: 2022/9/16
  */
-public class RedisConfig {
-}
+public class RedisConfig {}

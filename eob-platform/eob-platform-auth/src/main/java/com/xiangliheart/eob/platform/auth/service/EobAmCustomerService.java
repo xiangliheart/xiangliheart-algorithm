@@ -4,11 +4,11 @@
 
 package com.xiangliheart.eob.platform.auth.service;
 
+import java.util.List;
+
 import com.xiangliheart.eob.common.repository.pagehelper.PageRequest;
 import com.xiangliheart.eob.common.repository.pagehelper.PageResult;
 import com.xiangliheart.eob.platform.auth.entity.EobAmCustomer;
-
-import java.util.List;
 
 /**
  * EobAmCustomerService

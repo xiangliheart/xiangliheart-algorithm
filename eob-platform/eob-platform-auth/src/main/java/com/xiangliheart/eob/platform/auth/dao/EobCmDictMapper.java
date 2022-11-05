@@ -13,5 +13,4 @@ import com.xiangliheart.eob.platform.auth.entity.EobCmDict;
  * @auther: xiangliheart(湘澧寸心)
  * @since: 2022/7/10
  */
-public interface EobCmDictMapper extends CommonBaseMapper<EobCmDict> {
-}
+public interface EobCmDictMapper extends CommonBaseMapper<EobCmDict> {}

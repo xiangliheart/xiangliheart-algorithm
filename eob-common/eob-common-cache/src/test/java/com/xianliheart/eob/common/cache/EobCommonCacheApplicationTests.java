@@ -12,7 +12,6 @@ package com.xianliheart.eob.common.cache;
  */
 class EobCommonCacheApplicationTests {
 
-    void contextLoads() {
-    }
+    void contextLoads() {}
 
 }

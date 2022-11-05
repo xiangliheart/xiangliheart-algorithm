@@ -1,10 +1,11 @@
 package com.xiangliheart.eob.platform.auth.entity;
 
+import java.io.Serializable;
+
 import com.xiangliheart.eob.common.repository.entity.BaseEntity;
+
 import lombok.Builder;
 import lombok.Data;
-
-import java.io.Serializable;
 
 /**
  * EobAhRoleMenu
@@ -15,9 +16,7 @@ import java.io.Serializable;
 @Data
 @Builder
 public class EobAhRoleMenu extends BaseEntity implements Serializable {
-    private Long roleId;
-
-    private Long menuId;
-
     private static final long serialVersionUID = 1L;
+    private Long roleId;
+    private Long menuId;
 }

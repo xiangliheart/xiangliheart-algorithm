@@ -4,11 +4,7 @@
 
 package com.xiangliheart.eob.common.utils;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.OutputStream;
+import java.io.*;
 
 import org.apache.poi.ss.usermodel.Workbook;
 

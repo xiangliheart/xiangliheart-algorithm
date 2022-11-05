@@ -4,9 +4,9 @@
 
 package com.xiangliheart.eob.platform.auth.service;
 
-import com.xiangliheart.eob.platform.auth.entity.EobAmCustomerUser;
-
 import java.util.Set;
+
+import com.xiangliheart.eob.platform.auth.entity.EobAmCustomerUser;
 
 public interface EobAmCustomerUserService {
 

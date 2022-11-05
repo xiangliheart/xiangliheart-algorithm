@@ -1,13 +1,14 @@
 package com.xiangliheart.eob.common.security.utils;
 
-import com.xiangliheart.eob.common.security.security.JwtAuthenticatioToken;
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
 
-import javax.servlet.http.HttpServletRequest;
+import com.xiangliheart.eob.common.security.security.JwtAuthenticatioToken;
 
 /**
  * SecurityUtils Security相关操作
@@ -23,7 +24,8 @@ public class SecurityUtils {
      * @auther: xiangliheart(湘澧寸心)
      * @since: 2022/7/10
      */
-    public static JwtAuthenticatioToken login(HttpServletRequest request, String username, String password, AuthenticationManager authenticationManager) {
+    public static JwtAuthenticatioToken login(HttpServletRequest request, String username, String password,
+        AuthenticationManager authenticationManager) {
         JwtAuthenticatioToken token = new JwtAuthenticatioToken(username, password);
         token.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
         // 执行登录认证过程
@@ -60,7 +62,7 @@ public class SecurityUtils {
         if (authentication != null) {
             Object principal = authentication.getPrincipal();
             if (principal != null && principal instanceof UserDetails) {
-                username = ((UserDetails) principal).getUsername();
+                username = ((UserDetails)principal).getUsername();
             }
         }
         return username;
@@ -77,7 +79,7 @@ public class SecurityUtils {
         if (authentication != null) {
             Object principal = authentication.getPrincipal();
             if (principal != null && principal instanceof UserDetails) {
-                username = ((UserDetails) principal).getUsername();
+                username = ((UserDetails)principal).getUsername();
             }
         }
         return username;

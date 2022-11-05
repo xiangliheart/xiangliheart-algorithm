@@ -1,9 +1,9 @@
 package com.xiangliheart.eob.common.security.security;
 
+import java.util.Collection;
+
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.GrantedAuthority;
-
-import java.util.Collection;
 
 /**
  * JwtAuthenticatioToken 自定义令牌对象
@@ -26,9 +26,14 @@ public class JwtAuthenticatioToken extends UsernamePasswordAuthenticationToken {
         this.token = token;
     }
 
-    public JwtAuthenticatioToken(Object principal, Object credentials, Collection<? extends GrantedAuthority> authorities, String token) {
+    public JwtAuthenticatioToken(Object principal, Object credentials,
+        Collection<? extends GrantedAuthority> authorities, String token) {
         super(principal, credentials, authorities);
         this.token = token;
+    }
+
+    public static long getSerialversionuid() {
+        return serialVersionUID;
     }
 
     public String getToken() {
@@ -37,9 +42,5 @@ public class JwtAuthenticatioToken extends UsernamePasswordAuthenticationToken {
 
     public void setToken(String token) {
         this.token = token;
-    }
-
-    public static long getSerialversionuid() {
-        return serialVersionUID;
     }
 }

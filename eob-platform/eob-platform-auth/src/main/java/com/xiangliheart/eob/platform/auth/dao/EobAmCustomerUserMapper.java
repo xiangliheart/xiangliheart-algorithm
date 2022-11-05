@@ -13,5 +13,4 @@ import com.xiangliheart.eob.platform.auth.entity.EobAmCustomerUser;
  * @auther: xiangliheart(湘澧寸心)
  * @since: 2022/7/10
  */
-public interface EobAmCustomerUserMapper extends CommonBaseMapper<EobAmCustomerUser> {
-}
+public interface EobAmCustomerUserMapper extends CommonBaseMapper<EobAmCustomerUser> {}

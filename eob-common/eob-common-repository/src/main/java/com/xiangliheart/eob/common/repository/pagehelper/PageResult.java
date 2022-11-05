@@ -4,10 +4,10 @@
 
 package com.xiangliheart.eob.common.repository.pagehelper;
 
+import java.util.List;
+
 import io.swagger.annotations.ApiModel;
 import lombok.Data;
-
-import java.util.List;
 
 /**
  * PageResult 分页返回结果

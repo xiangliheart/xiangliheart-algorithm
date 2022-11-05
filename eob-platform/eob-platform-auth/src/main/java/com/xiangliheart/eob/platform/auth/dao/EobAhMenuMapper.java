@@ -13,5 +13,4 @@ import com.xiangliheart.eob.platform.auth.entity.EobAhMenu;
  * @auther: xiangliheart(湘澧寸心)
  * @since: 2022/7/10
  */
-public interface EobAhMenuMapper extends CommonBaseMapper<EobAhMenu> {
-}
+public interface EobAhMenuMapper extends CommonBaseMapper<EobAhMenu> {}

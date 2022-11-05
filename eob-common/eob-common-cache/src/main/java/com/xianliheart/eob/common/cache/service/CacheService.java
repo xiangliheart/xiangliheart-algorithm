@@ -4,21 +4,23 @@
 
 package com.xianliheart.eob.common.cache.service;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import lombok.extern.slf4j.Slf4j;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Date;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Date;
-import java.util.List;
-import java.util.concurrent.TimeUnit;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * CacheService
@@ -29,15 +31,14 @@ import java.util.concurrent.TimeUnit;
 @Slf4j
 @Component
 public class CacheService {
+    private final int EXPIRE_TIME = 1;
+    private final TimeUnit EXPIRE_TIME_TYPE = TimeUnit.DAYS;
     @Autowired
     private ObjectMapper objectMapper = new ObjectMapper();
     @Autowired
     private StringRedisTemplate redisTemplate;
     @Value("${redis.default-key-prefix}")
     private String DEFAULT_KEY_PREFIX;
-    private final int EXPIRE_TIME = 1;
-    private final TimeUnit EXPIRE_TIME_TYPE = TimeUnit.DAYS;
-
 
     /**
      * add 数据缓存至redis
@@ -48,9 +49,7 @@ public class CacheService {
     public <K, V> void add(K key, V value) {
         try {
             if (value != null) {
-                redisTemplate
-                        .opsForValue()
-                        .set(DEFAULT_KEY_PREFIX + key, objectMapper.writeValueAsString(value));
+                redisTemplate.opsForValue().set(DEFAULT_KEY_PREFIX + key, objectMapper.writeValueAsString(value));
             }
         } catch (Exception e) {
             log.error(e.getMessage(), e);
@@ -67,9 +66,8 @@ public class CacheService {
     public <K, V> void add(K key, V value, long timeout, TimeUnit unit) {
         try {
             if (value != null) {
-                redisTemplate
-                        .opsForValue()
-                        .set(DEFAULT_KEY_PREFIX + key, objectMapper.writeValueAsString(value), timeout, unit);
+                redisTemplate.opsForValue().set(DEFAULT_KEY_PREFIX + key, objectMapper.writeValueAsString(value),
+                    timeout, unit);
             }
         } catch (Exception e) {
             log.error(e.getMessage(), e);
@@ -119,8 +117,7 @@ public class CacheService {
         V result = null;
         if (!StringUtils.isEmpty(value)) {
             try {
-                result = objectMapper.readValue(value, new TypeReference<V>() {
-                });
+                result = objectMapper.readValue(value, new TypeReference<V>() {});
             } catch (JsonProcessingException e) {
                 throw new RuntimeException("从redis缓存中获取缓存数据失败");
             }
@@ -139,8 +136,7 @@ public class CacheService {
         List<V> result = Collections.emptyList();
         if (!StringUtils.isEmpty(value)) {
             try {
-                result = objectMapper.readValue(value, new TypeReference<List<V>>() {
-                });
+                result = objectMapper.readValue(value, new TypeReference<List<V>>() {});
             } catch (JsonProcessingException e) {
                 throw new RuntimeException("从redis缓存中获取缓存数据失败");
             }
@@ -255,4 +251,3 @@ public class CacheService {
         return redisTemplate.getExpire(key);
     }
 }
-

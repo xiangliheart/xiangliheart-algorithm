@@ -4,6 +4,13 @@
 
 package com.xiangliheart.eob.platform.auth.service.impl;
 
+import java.util.List;
+
+import javax.annotation.Resource;
+
+import org.apache.ibatis.session.RowBounds;
+import org.springframework.stereotype.Service;
+
 import com.github.pagehelper.PageInfo;
 import com.xiangliheart.eob.common.repository.pagehelper.PageRequest;
 import com.xiangliheart.eob.common.repository.pagehelper.PageResult;
@@ -11,12 +18,8 @@ import com.xiangliheart.eob.common.repository.pagehelper.PageUtils;
 import com.xiangliheart.eob.platform.auth.dao.EobAmCustomerMapper;
 import com.xiangliheart.eob.platform.auth.entity.EobAmCustomer;
 import com.xiangliheart.eob.platform.auth.service.EobAmCustomerService;
-import org.apache.ibatis.session.RowBounds;
-import org.springframework.stereotype.Service;
-import tk.mybatis.mapper.entity.Example;
 
-import javax.annotation.Resource;
-import java.util.List;
+import tk.mybatis.mapper.entity.Example;
 
 /**
  * EobAmCustomerServiceImpl
@@ -140,5 +143,3 @@ public class EobAmCustomerServiceImpl implements EobAmCustomerService {
         return new PageInfo<EobAmCustomer>(eobAmCustomers);
     }
 }
-
-

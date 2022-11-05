@@ -1,12 +1,13 @@
 package com.xiangliheart.eob.platform.auth.service.impl;
 
-import com.xiangliheart.eob.platform.auth.entity.EobAmCustomerUser;
-import com.xiangliheart.eob.platform.auth.service.EobAmCustomerUserService;
+import java.util.HashSet;
+import java.util.Set;
+
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.util.HashSet;
-import java.util.Set;
+import com.xiangliheart.eob.platform.auth.entity.EobAmCustomerUser;
+import com.xiangliheart.eob.platform.auth.service.EobAmCustomerUserService;
 
 /**
  * EobAmCustomerUserServiceImpl
