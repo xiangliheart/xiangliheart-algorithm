@@ -11,7 +11,6 @@ package com.xiangliheart.general.platform.common.web.http;
  * @since: 2022/7/20
  */
 public class HttpResult {
-
     private int code = 200;
     private String msg;
     private Object data;

@@ -22,7 +22,7 @@ import io.swagger.annotations.ApiOperation;
  * @auther: xiangliheart(湘澧寸心)
  * @since: 2022/7/2
  */
-@Api(tags = "SysAmCustomerController-客户管理")
+@Api(tags = "客户信息管理-SysAmCustomerController")
 @RestController
 @RequestMapping("/sysAmCustomer")
 public class SysAmCustomerController {
@@ -39,7 +39,7 @@ public class SysAmCustomerController {
     @ApiOperation(value = "创建单条客户信息", notes = "创建单条客户信息")
     @PostMapping(value = "/create/single")
     public Object createSingle(@RequestBody SysAmCustomer sysAmCustomer) {
-        return sysAmCustomerService.insert(sysAmCustomer);
+        return sysAmCustomerService.save(sysAmCustomer);
     }
 
     /**
@@ -52,7 +52,7 @@ public class SysAmCustomerController {
     @ApiOperation(value = "批量创建客户信息", notes = "批量创建客户信息")
     @PostMapping(value = "/create/list")
     public Object createList(@RequestParam List<SysAmCustomer> sysAmCustomers) {
-        return null;
+        return sysAmCustomerService.saveList(sysAmCustomers);
     }
 
     /**
@@ -65,7 +65,7 @@ public class SysAmCustomerController {
     @ApiOperation(value = "查询单条客户信息", notes = "查询单条客户信息")
     @PostMapping(value = "/query/single")
     public SysAmCustomer querySingle(@RequestParam String customerId) {
-        return sysAmCustomerService.findByPrimaryKey(customerId);
+        return sysAmCustomerService.findById(customerId);
     }
 
     /**
@@ -91,7 +91,7 @@ public class SysAmCustomerController {
     @ApiOperation(value = "修改单条客户信息", notes = "修改单条客户信息")
     @PostMapping(value = "/modify/single")
     public Object modifySingle(@RequestParam SysAmCustomer sysAmCustomer) {
-        return sysAmCustomerService.updateByPrimaryKeySelective(sysAmCustomer);
+        return sysAmCustomerService.update(sysAmCustomer);
     }
 
     /**
@@ -116,8 +116,8 @@ public class SysAmCustomerController {
      */
     @PostMapping(value = "/delete/single")
     @ApiOperation(value = "删除单个客户信息", notes = "删除单个客户信息")
-    public Object deleteSingle(@RequestParam String customerId) {
-        return sysAmCustomerService.deleteByPrimaryKey(customerId);
+    public Object deleteSingle(@RequestParam SysAmCustomer sysAmCustomer) {
+        return sysAmCustomerService.delete(sysAmCustomer);
     }
 
     /**

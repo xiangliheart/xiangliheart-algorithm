@@ -7,6 +7,7 @@ import javax.persistence.Table;
 
 import com.xiangliheart.general.platform.common.repository.entity.BaseEntity;
 
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
 @Data
@@ -14,9 +15,12 @@ import lombok.Data;
 public class SysAmCustomer extends BaseEntity implements Serializable {
     private static final long serialVersionUID = 1L;
     @Column(name = "region_code")
+    @ApiModelProperty(value = "区域代码")
     private String regionCode;
     @Column(name = "name")
+    @ApiModelProperty(value = "客户名称")
     private String name;
     @Column(name = "status")
+    @ApiModelProperty(value = "客户状态")
     private Integer status;
 }

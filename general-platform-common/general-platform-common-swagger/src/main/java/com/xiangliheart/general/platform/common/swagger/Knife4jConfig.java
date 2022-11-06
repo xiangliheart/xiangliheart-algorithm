@@ -101,6 +101,7 @@ public class Knife4jConfig extends WebMvcConfigurationSupport {
         Contact Contact = new Contact(name, url, email);
         apiInfoBuilder.contact(Contact);
         apiInfoBuilder.version(version);
+        apiInfoBuilder.title(title);
         return apiInfoBuilder.build();
     }
 

@@ -1,20 +1,4 @@
-knife4j-propertys:
-  title: EOB Server Auth API
-  description: EOB Server Auth API
-  termsOfServiceUrl: www.xiangliheart.com
-  version: 1.0.0-SNAPSHOT
-  basePackage: com.xiangliheart.eob
-  groupName: 1.0.0-SNAPSHOT
-  name: xiangliheart(湘澧寸心)
-  url: www.xiangliheart.com
-  email: xiangliheart@163.com
-
 spring:
   mvc:
     pathmatch:
       matching-strategy: ant_path_matcher
-
-#spring:
-#  mvc:
-#    pathmatch:
-#      matching-strategy: ANT_PATH_MATCHER

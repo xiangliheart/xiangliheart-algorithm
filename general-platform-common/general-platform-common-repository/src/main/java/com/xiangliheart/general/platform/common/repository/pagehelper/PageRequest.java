@@ -5,6 +5,7 @@
 package com.xiangliheart.general.platform.common.repository.pagehelper;
 
 import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
 /**
@@ -16,7 +17,9 @@ import lombok.Data;
 @Data
 @ApiModel
 public class PageRequest {
+    @ApiModelProperty(value = "页码")
     private int pageNum;
 
+    @ApiModelProperty(value = "每页条数")
     private int pageSize;
 }

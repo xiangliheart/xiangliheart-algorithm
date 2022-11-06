@@ -4,10 +4,7 @@
 
 package com.xiangliheart.general.platform.service.admin.service;
 
-import java.util.List;
-
-import com.xiangliheart.general.platform.common.repository.pagehelper.PageRequest;
-import com.xiangliheart.general.platform.common.repository.pagehelper.PageResult;
+import com.xiangliheart.general.platform.common.repository.service.CrudService;
 import com.xiangliheart.general.platform.service.admin.entity.SysAmCustomer;
 
 /**
@@ -16,20 +13,6 @@ import com.xiangliheart.general.platform.service.admin.entity.SysAmCustomer;
  * @auther: xiangliheart(湘澧寸心)
  * @since: 2022/7/2
  */
-public interface SysAmCustomerService {
-    int deleteByPrimaryKey(String customerId);
+public interface SysAmCustomerService extends CrudService<SysAmCustomer> {
 
-    int insert(SysAmCustomer row);
-
-    int insertSelective(SysAmCustomer row);
-
-    SysAmCustomer findByPrimaryKey(String customerId);
-
-    int updateByPrimaryKeySelective(SysAmCustomer row);
-
-    int updateByPrimaryKey(SysAmCustomer row);
-
-    List<SysAmCustomer> findAll();
-
-    PageResult findPage(PageRequest pageRequest);
 }

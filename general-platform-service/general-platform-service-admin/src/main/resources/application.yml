@@ -3,7 +3,7 @@ server:
   tomcat:
     uri-encoding: UTF-8
   servlet:
-    context-path: /eob/platform/auth
+    context-path: /general/platform/admin
 spring:
   datasource:
     name: druidDataSource
@@ -35,13 +35,13 @@ pagehelper:
   params: count=countSql
 
 knife4j-propertys:
-  title: EOB Server Auth API
-  description: EOB Server Auth API
-  termsOfServiceUrl: www.xiangliheart.com
+  title: General Platform Admin API
+  description: 通用平台管理系统服务端接口
+  termsOfServiceUrl: www.xiangliheart.com/general/platform/admin
   version: 1.0.0-SNAPSHOT
-  basePackage: com.xiangliheart.eob
+  basePackage: com.xiangliheart.general.platform
   groupName: 1.0.0-SNAPSHOT
   name: xiangliheart(湘澧寸心)
   url: www.xiangliheart.com
-  email: xiangliheart@163.com
+  email: xiangliheart@hotmail.com
 

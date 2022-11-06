@@ -6,10 +6,10 @@ package com.xiangliheart.general.platform.service.admin.service;
 
 import java.util.Set;
 
+import com.xiangliheart.general.platform.common.repository.service.CrudService;
 import com.xiangliheart.general.platform.service.admin.entity.SysAmCustomerUser;
 
-public interface SysAmCustomerUserService {
-
+public interface SysAmCustomerUserService extends CrudService<SysAmCustomerUser> {
     /**
      * findByCustomerUserName 根据用户名查找用户
      *
@@ -25,4 +25,5 @@ public interface SysAmCustomerUserService {
      * @since: 2022/9/16
      */
     Set<String> findPermissions(String customerUserName);
+
 }

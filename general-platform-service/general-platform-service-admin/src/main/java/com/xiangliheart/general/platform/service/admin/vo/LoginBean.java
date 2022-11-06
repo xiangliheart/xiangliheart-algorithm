@@ -4,6 +4,7 @@
 
 package com.xiangliheart.general.platform.service.admin.vo;
 
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -16,7 +17,10 @@ import lombok.Setter;
 @Getter
 @Setter
 public class LoginBean {
+    @ApiModelProperty(value = "登录账号")
     private String account;
+    @ApiModelProperty(value = "登录密码")
     private String password;
+    @ApiModelProperty(value = "登录验证码")
     private String captcha;
 }

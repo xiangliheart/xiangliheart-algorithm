@@ -4,12 +4,10 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
-import javax.servlet.ServletException;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.xiangliheart.general.platform.service.admin.vo.LoginBean;
 import org.apache.tomcat.util.http.fileupload.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -26,6 +24,10 @@ import com.xiangliheart.general.platform.common.security.utils.SecurityUtils;
 import com.xiangliheart.general.platform.common.web.http.HttpResult;
 import com.xiangliheart.general.platform.service.admin.entity.SysAmCustomerUser;
 import com.xiangliheart.general.platform.service.admin.service.SysAmCustomerUserService;
+import com.xiangliheart.general.platform.service.admin.vo.LoginBean;
+
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 
 /**
  * LoginController 登录控制器
@@ -34,6 +36,7 @@ import com.xiangliheart.general.platform.service.admin.service.SysAmCustomerUser
  * @since: 2022/7/10
  */
 @RestController
+@Api(tags = "用户登录-SysAmCustomerUserController")
 public class SysLoginController {
 
     @Autowired
@@ -49,8 +52,9 @@ public class SysLoginController {
      * @auther: xiangliheart(湘澧寸心)
      * @since: 2022/7/10
      */
-    @GetMapping("captcha.jpg")
-    public void captcha(HttpServletResponse response, HttpServletRequest request) throws ServletException, IOException {
+    @GetMapping("captcha")
+    @ApiOperation(value = "获取验证码", notes = "获取验证码")
+    public void captcha(HttpServletResponse response, HttpServletRequest request) throws IOException {
         response.setHeader("Cache-Control", "no-store, no-cache");
         response.setContentType("image/jpeg");
 
@@ -73,6 +77,7 @@ public class SysLoginController {
      * @since: 2022/7/10
      */
     @PostMapping(value = "/login")
+    @ApiOperation(value = "登入", notes = "登入")
     public HttpResult login(@RequestBody LoginBean loginBean, HttpServletRequest request) throws IOException {
         String username = loginBean.getAccount();
         String password = loginBean.getPassword();
