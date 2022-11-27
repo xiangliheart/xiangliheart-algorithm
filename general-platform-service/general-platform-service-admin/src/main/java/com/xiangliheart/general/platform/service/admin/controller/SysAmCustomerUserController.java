@@ -1,3 +1,7 @@
+/**
+ * Copyright (c) 2022-2022 xiangliheart(湘澧寸心) All rights reserved.
+ */
+
 package com.xiangliheart.general.platform.service.admin.controller;
 
 import org.springframework.security.access.prepost.PreAuthorize;

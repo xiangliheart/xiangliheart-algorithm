@@ -15,8 +15,8 @@ import tk.mybatis.spring.annotation.MapperScan;
  * @auther: xiangliheart(湘澧寸心)
  * @since: 2022/7/2
  */
-@SpringBootApplication(scanBasePackages = {"com.xiangliheart.eob"})
-@MapperScan("com.xiangliheart.eob.platform.auth.dao")
+@SpringBootApplication(scanBasePackages = {"com.xiangliheart.general.platform"})
+@MapperScan("com.xiangliheart.general.platform")
 public class PlatformAuthApplication {
 
     public static void main(String[] args) {

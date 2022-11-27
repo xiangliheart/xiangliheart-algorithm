@@ -1,6 +1,11 @@
+/**
+ * Copyright (c) 2022-2022 xiangliheart(湘澧寸心) All rights reserved.
+ */
+
 package com.xiangliheart.general.platform.service.admin.entity;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Table;
@@ -27,4 +32,10 @@ public class SysAhMenu extends BaseEntity implements Serializable {
     private String icon;
     @Column(name = "order_num")
     private Integer orderNum;
+    // 非数据库字段
+    private String parentName;
+    // 非数据库字段
+    private Integer level;
+    // 非数据库字段
+    private List<SysAhMenu> children;
 }

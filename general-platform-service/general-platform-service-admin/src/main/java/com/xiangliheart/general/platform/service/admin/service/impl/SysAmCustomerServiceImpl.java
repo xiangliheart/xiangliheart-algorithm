@@ -46,18 +46,22 @@ public class SysAmCustomerServiceImpl implements SysAmCustomerService {
     }
 
     @Override
+    public int delete(List<SysAmCustomer> records) {
+        return 0;
+    }
+
+    @Override
     public int update(SysAmCustomer record) {
         return sysAmCustomerMapper.updateByPrimaryKeySelective(record);
     }
 
     @Override
-    public SysAmCustomer findById(String id) {
+    public SysAmCustomer findById(Long id) {
         return sysAmCustomerMapper.selectByPrimaryKey(id);
     }
 
     @Override
     public PageInfo findPage(PageRequest pageRequest) {
-
         RowBounds rowBounds = new RowBounds(pageRequest.getPageNum(), pageRequest.getPageSize());
         Example example = new Example(SysAmCustomer.class);
         List<SysAmCustomer> sysAmCustomers = sysAmCustomerMapper.selectByExampleAndRowBounds(example, rowBounds);

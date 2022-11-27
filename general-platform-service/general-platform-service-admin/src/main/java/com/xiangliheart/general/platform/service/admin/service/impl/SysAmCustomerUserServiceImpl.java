@@ -44,6 +44,11 @@ public class SysAmCustomerUserServiceImpl implements SysAmCustomerUserService {
     }
 
     @Override
+    public int delete(List<SysAmCustomerUser> records) {
+        return 0;
+    }
+
+    @Override
     public int update(SysAmCustomerUser record) {
         return sysAmCustomerUserMapper.updateByPrimaryKeySelective(record);
     }

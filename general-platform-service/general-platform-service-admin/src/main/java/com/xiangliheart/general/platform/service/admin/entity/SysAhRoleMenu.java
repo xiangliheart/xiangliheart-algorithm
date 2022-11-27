@@ -1,3 +1,7 @@
+/**
+ * Copyright (c) 2022-2022 xiangliheart(湘澧寸心) All rights reserved.
+ */
+
 package com.xiangliheart.general.platform.service.admin.entity;
 
 import java.io.Serializable;
@@ -14,7 +18,7 @@ import lombok.Data;
 public class SysAhRoleMenu extends BaseEntity implements Serializable {
     private static final long serialVersionUID = 1L;
     @Column(name = "role_id")
-    private Long roleId;
+    private String roleId;
     @Column(name = "menu_id")
     private Long menuId;
 }

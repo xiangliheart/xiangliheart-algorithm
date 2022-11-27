@@ -5,7 +5,7 @@ import java.util.List;
 import com.github.pagehelper.PageInfo;
 import com.xiangliheart.general.platform.common.repository.pagehelper.PageRequest;
 
-public interface CrudService <T>{
+public interface CurdService<T> {
 
     int save(T record);
 
@@ -13,9 +13,11 @@ public interface CrudService <T>{
 
     int delete(T record);
 
+    int delete(List<T> records);
+
     int update(T record);
 
-    T findById(String id);
+    T findById(Long id);
 
     PageInfo findPage(PageRequest pageRequest);
 }

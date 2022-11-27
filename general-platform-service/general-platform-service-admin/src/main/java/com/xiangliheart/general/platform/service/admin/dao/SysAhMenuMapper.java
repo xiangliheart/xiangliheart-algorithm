@@ -7,4 +7,6 @@ package com.xiangliheart.general.platform.service.admin.dao;
 import com.xiangliheart.general.platform.common.repository.mapper.CommonBaseMapper;
 import com.xiangliheart.general.platform.service.admin.entity.SysAhMenu;
 
-public interface SysAhMenuMapper extends CommonBaseMapper<SysAhMenu> {}
+public interface SysAhMenuMapper extends CommonBaseMapper<SysAhMenu> {
+
+}
