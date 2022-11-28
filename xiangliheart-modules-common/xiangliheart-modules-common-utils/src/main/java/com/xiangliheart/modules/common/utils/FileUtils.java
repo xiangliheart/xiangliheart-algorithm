@@ -6,7 +6,7 @@ package com.xiangliheart.modules.common.utils;
 
 import java.io.*;
 
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpServletResponse;
 
 /**
  * FileUtils 文件相关操作

@@ -1,7 +1,5 @@
 package com.xiangliheart.modules.common.security.utils;
 
-import javax.servlet.http.HttpServletRequest;
-
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -9,6 +7,8 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
 
 import com.xiangliheart.modules.common.security.security.JwtAuthenticatioToken;
+
+import jakarta.servlet.http.HttpServletRequest;
 
 /**
  * SecurityUtils Security相关操作
