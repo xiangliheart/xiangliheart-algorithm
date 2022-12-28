@@ -3,6 +3,8 @@ package com.xiangliheart.modules.common.security.utils;
 import java.io.Serializable;
 import java.util.*;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 
@@ -12,7 +14,6 @@ import com.xiangliheart.modules.common.security.security.JwtAuthenticatioToken;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
-import jakarta.servlet.http.HttpServletRequest;
 
 /**
  * JwtTokenUtils JWT工具类
