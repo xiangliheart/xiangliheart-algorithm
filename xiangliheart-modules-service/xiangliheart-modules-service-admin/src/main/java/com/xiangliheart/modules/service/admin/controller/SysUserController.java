@@ -22,8 +22,8 @@ import io.swagger.annotations.ApiOperation;
  */
 @RestController
 @RequestMapping("user")
-@Api(tags = "用户信息管理-SysAmCustomerUserController")
-public class SysCustomerUserController {
+@Api(tags = "用户管理-SysUserController")
+public class SysUserController {
 
     @PreAuthorize("hasAuthority('sys:user:view')")
     @GetMapping(value = "/view")

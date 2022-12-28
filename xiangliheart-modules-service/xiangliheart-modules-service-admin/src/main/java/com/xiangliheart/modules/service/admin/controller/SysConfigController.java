@@ -21,7 +21,7 @@ import com.xiangliheart.modules.service.admin.service.SysConfigService;
  * @since: 2022/11/27
  */
 @RestController
-@RequestMapping("config")
+@RequestMapping("系统配置-config")
 public class SysConfigController {
 
     @Autowired

@@ -20,7 +20,7 @@ import com.xiangliheart.modules.service.admin.service.SysMenuService;
  * @since: 2022/11/27
  */
 @RestController
-@RequestMapping("menu")
+@RequestMapping("菜单管理-menu")
 public class SysMenuController {
     @Autowired
     private SysMenuService sysAhMenuService;

@@ -24,7 +24,7 @@ import com.xiangliheart.modules.service.admin.service.SysLogService;
  * @since: 2022/11/27
  */
 @RestController
-@RequestMapping("log")
+@RequestMapping("操作日志-log")
 public class SysLogController {
 
     @Autowired

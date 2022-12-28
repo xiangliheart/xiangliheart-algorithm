@@ -24,7 +24,7 @@ import com.xiangliheart.modules.service.admin.service.SysRoleService;
  * @since: 2022/11/27
  */
 @RestController
-@RequestMapping("role")
+@RequestMapping("角色管理-role")
 public class SysRoleController {
 
     @Autowired

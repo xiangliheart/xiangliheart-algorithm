@@ -15,13 +15,13 @@ import com.xiangliheart.modules.service.admin.entity.SysDict;
 import com.xiangliheart.modules.service.admin.service.SysDictService;
 
 /**
- * SysDictController 字典控制器
+ * SysDictController 数据字典控制器
  *
  * @auther: xiangliheart(湘澧寸心)
  * @since: 2022/11/27
  */
 @RestController
-@RequestMapping("dict")
+@RequestMapping("数据字典-dict")
 public class SysDictController {
 
     @Autowired

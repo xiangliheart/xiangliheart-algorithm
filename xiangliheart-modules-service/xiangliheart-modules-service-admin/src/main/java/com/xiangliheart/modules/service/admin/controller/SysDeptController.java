@@ -20,7 +20,7 @@ import com.xiangliheart.modules.service.admin.service.SysDeptService;
  * @since: 2022/11/27
  */
 @RestController
-@RequestMapping("dept")
+@RequestMapping("机构管理-dept")
 public class SysDeptController {
 
     @Autowired
