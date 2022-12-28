@@ -17,8 +17,8 @@ import org.springframework.stereotype.Service;
 
 import com.xiangliheart.modules.common.security.security.GrantedAuthorityImpl;
 import com.xiangliheart.modules.common.security.security.JwtUserDetails;
-import com.xiangliheart.modules.service.admin.entity.SysAmCustomerUser;
-import com.xiangliheart.modules.service.admin.service.SysAmCustomerUserService;
+import com.xiangliheart.modules.service.admin.entity.SysUser;
+import com.xiangliheart.modules.service.admin.service.SysCustomerUserService;
 
 /**
  * UserDetailsServiceImpl 用户登录认证信息查询
@@ -30,11 +30,11 @@ import com.xiangliheart.modules.service.admin.service.SysAmCustomerUserService;
 public class UserDetailsServiceImpl implements UserDetailsService {
 
     @Autowired
-    private SysAmCustomerUserService customerUserService;
+    private SysCustomerUserService customerUserService;
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        SysAmCustomerUser customerUser = customerUserService.findByCustomerUserName(username);
+        SysUser customerUser = customerUserService.findByCustomerUserName(username);
         if (customerUser == null) {
             throw new UsernameNotFoundException("该用户不存在");
         }

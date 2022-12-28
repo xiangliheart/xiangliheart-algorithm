@@ -26,8 +26,8 @@ import com.xiangliheart.modules.common.security.security.JwtAuthenticatioToken;
 import com.xiangliheart.modules.common.security.utils.PasswordUtils;
 import com.xiangliheart.modules.common.security.utils.SecurityUtils;
 import com.xiangliheart.modules.common.web.http.HttpResult;
-import com.xiangliheart.modules.service.admin.entity.SysAmCustomerUser;
-import com.xiangliheart.modules.service.admin.service.SysAmCustomerUserService;
+import com.xiangliheart.modules.service.admin.entity.SysUser;
+import com.xiangliheart.modules.service.admin.service.SysCustomerUserService;
 import com.xiangliheart.modules.service.admin.vo.LoginBean;
 
 import io.swagger.annotations.Api;
@@ -46,7 +46,7 @@ public class SysLoginController {
     @Autowired
     private Producer producer;
     @Autowired
-    private SysAmCustomerUserService sysAmCustomerUserService;
+    private SysCustomerUserService sysAmCustomerUserService;
     @Autowired
     private AuthenticationManager authenticationManager;
 
@@ -95,7 +95,7 @@ public class SysLoginController {
             return HttpResult.error("验证码不正确");
         }
         // 用户信息
-        SysAmCustomerUser customerUser = sysAmCustomerUserService.findByCustomerUserName(username);
+        SysUser customerUser = sysAmCustomerUserService.findByCustomerUserName(username);
         // 账号不存在、密码错误
         if (customerUser == null) {
             return HttpResult.error("账号不存在");

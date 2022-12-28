@@ -12,10 +12,10 @@ import org.springframework.web.bind.annotation.*;
 import com.xiangliheart.modules.common.repository.pagehelper.PageRequest;
 import com.xiangliheart.modules.common.web.http.HttpResult;
 import com.xiangliheart.modules.service.admin.constant.SysConstants;
-import com.xiangliheart.modules.service.admin.dao.SysAhRoleMapper;
-import com.xiangliheart.modules.service.admin.entity.SysAhRole;
-import com.xiangliheart.modules.service.admin.entity.SysAhRoleMenu;
-import com.xiangliheart.modules.service.admin.service.SysAhRoleService;
+import com.xiangliheart.modules.service.admin.dao.SysRoleMapper;
+import com.xiangliheart.modules.service.admin.entity.SysRole;
+import com.xiangliheart.modules.service.admin.entity.SysRoleMenu;
+import com.xiangliheart.modules.service.admin.service.SysRoleService;
 
 /**
  * SysRoleController 角色控制器
@@ -28,13 +28,13 @@ import com.xiangliheart.modules.service.admin.service.SysAhRoleService;
 public class SysRoleController {
 
     @Autowired
-    private SysAhRoleService sysRoleService;
+    private SysRoleService sysRoleService;
     @Autowired
-    private SysAhRoleMapper sysRoleMapper;
+    private SysRoleMapper sysRoleMapper;
 
     @PostMapping(value = "/save")
-    public HttpResult save(@RequestBody SysAhRole record) {
-        SysAhRole role = sysRoleService.findById(record.getId());
+    public HttpResult save(@RequestBody SysRole record) {
+        SysRole role = sysRoleService.findById(record.getId());
         if (role != null) {
             if (SysConstants.ADMIN.equalsIgnoreCase(role.getName())) {
                 return HttpResult.error("超级管理员不允许修改!");
@@ -48,7 +48,7 @@ public class SysRoleController {
     }
 
     @PostMapping(value = "/delete")
-    public HttpResult delete(@RequestBody List<SysAhRole> records) {
+    public HttpResult delete(@RequestBody List<SysRole> records) {
         return HttpResult.ok(sysRoleService.delete(records));
     }
 
@@ -68,9 +68,9 @@ public class SysRoleController {
     }
 
     @PostMapping(value = "/saveRoleMenus")
-    public HttpResult saveRoleMenus(@RequestBody List<SysAhRoleMenu> records) {
-        for (SysAhRoleMenu record : records) {
-            SysAhRole sysRole = sysRoleMapper.selectByPrimaryKey(record.getRoleId());
+    public HttpResult saveRoleMenus(@RequestBody List<SysRoleMenu> records) {
+        for (SysRoleMenu record : records) {
+            SysRole sysRole = sysRoleMapper.selectByPrimaryKey(record.getRoleId());
             if (SysConstants.ADMIN.equalsIgnoreCase(sysRole.getName())) {
                 // 如果是超级管理员，不允许修改
                 return HttpResult.error("超级管理员拥有所有菜单权限，不允许修改！");

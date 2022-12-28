@@ -5,29 +5,26 @@
 package com.xiangliheart.modules.service.admin.entity;
 
 import java.io.Serializable;
-import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Table;
 
 import com.xiangliheart.modules.common.repository.entity.BaseEntity;
 
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
 @Data
-@Table(name = "sys_dept")
-public class SysStDept extends BaseEntity implements Serializable {
+@Table(name = "sys_customer")
+public class SysCustomer extends BaseEntity implements Serializable {
     private static final long serialVersionUID = 1L;
+    @Column(name = "region_code")
+    @ApiModelProperty(value = "区域代码")
+    private String regionCode;
     @Column(name = "name")
+    @ApiModelProperty(value = "客户名称")
     private String name;
-    @Column(name = "parent_id")
-    private Long parentId;
-    @Column(name = "order_num")
-    private Integer orderNum;
-    // 非数据库字段
-    private List<SysStDept> children;
-    // 非数据库字段
-    private String parentName;
-    // 非数据库字段
-    private Integer level;
+    @Column(name = "status")
+    @ApiModelProperty(value = "客户状态")
+    private Integer status;
 }
