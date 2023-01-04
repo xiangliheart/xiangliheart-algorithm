@@ -1,5 +1,7 @@
 package com.xiangliheart.modules.common.security.config;
 
+import com.xiangliheart.modules.common.security.filter.JwtAuthenticationFilter;
+import com.xiangliheart.modules.common.security.security.JwtAuthenticationProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -14,9 +16,6 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.security.web.authentication.logout.HttpStatusReturningLogoutSuccessHandler;
-
-import com.xiangliheart.modules.common.security.filter.JwtAuthenticationFilter;
-import com.xiangliheart.modules.common.security.security.JwtAuthenticationProvider;
 
 /**
  * WebSecurityConfig

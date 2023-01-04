@@ -14,6 +14,7 @@
     <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <properties>
+        <java.version>17</java.version>
         <default-mysql.version>8.0.29</default-mysql.version>
         <default-knife4j-spring-boot-starter.verion>3.0.3</default-knife4j-spring-boot-starter.verion>
         <default-pagehelper-spring-boot-starter.verion>1.4.2</default-pagehelper-spring-boot-starter.verion>
@@ -109,6 +110,11 @@
             <dependency>
                 <groupId>com.xiangliheart.modules</groupId>
                 <artifactId>xiangliheart-modules-common-starter</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.xiangliheart.modules</groupId>
+                <artifactId>xiangliheart-modules-service-admin</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>

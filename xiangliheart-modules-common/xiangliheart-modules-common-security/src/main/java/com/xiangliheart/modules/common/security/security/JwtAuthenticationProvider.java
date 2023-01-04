@@ -1,13 +1,12 @@
 package com.xiangliheart.modules.common.security.security;
 
+import com.xiangliheart.modules.common.security.utils.PasswordEncoder;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
-
-import com.xiangliheart.modules.common.security.utils.PasswordEncoder;
 
 /**
  * JwtAuthenticationProvider 身份验证提供者

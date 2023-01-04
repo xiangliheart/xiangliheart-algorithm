@@ -14,12 +14,10 @@
     <name>xiangliheart-modules-service</name>
     <description>xiangliheart-modules-service</description>
     <packaging>pom</packaging>
-    <properties>
-        <java.version>1.8</java.version>
-    </properties>
     <modules>
         <module>xiangliheart-modules-service-auth</module>
         <module>xiangliheart-modules-service-workflow</module>
         <module>xiangliheart-modules-service-admin</module>
+        <module>xiangliheart-mudules-service-backup</module>
     </modules>
 </project>
