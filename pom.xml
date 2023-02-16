@@ -2,20 +2,15 @@
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.xiangliheart.modules</groupId>
-    <artifactId>xiangliheart-modules</artifactId>
+    <groupId>com.xiangliheart.algorithm</groupId>
+    <artifactId>xiangliheart-algorithm</artifactId>
     <version>1.0.0-SNAPSHOT</version>
-    <name>xiangliheart-modules</name>
-    <description>xiangliheart-modules</description>
+    <name>xiangliheart-algorithm</name>
+    <description>xiangliheart-algorithm</description>
     <packaging>pom</packaging>
     <properties>
         <java.version>17</java.version>
     </properties>
-    <modules>
-        <module>xiangliheart-modules-pom</module>
-        <module>xiangliheart-modules-common</module>
-        <module>xiangliheart-modules-service</module>
-    </modules>
     <build>
         <plugins>
             <plugin>
